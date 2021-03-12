@@ -1,3 +1,20 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #4f46e5;
+    border-radius: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #F3F4F6;
+}

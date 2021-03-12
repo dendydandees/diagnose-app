@@ -32717,6 +32717,23 @@ select {
           animation: bounce 1s infinite;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

@@ -22,11 +22,15 @@
 
         @livewireStyles
     </head>
-    <body>
-        @livewire('navigation-bar-guest')
+    <body class="font-sans antialiased">
 
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+        <div class="min-h-screen bg-gray-100">
+            @livewire('navigation-bar-guest')
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
 
         @livewireScripts
