@@ -17,6 +17,9 @@
                     </a>
                 </p>
             </div>
+
+            <x-jet-validation-errors class="my-4" />
+
             @if (session('status'))
                 <div class="my-4 font-medium text-sm text-green-600">
                     {{ session('status') }}
