@@ -33,12 +33,12 @@
                 <div class="rounded-md shadow-sm -space-y-px">
                     <!-- name field -->
                     <label for="name" class="sr-only">{{ __('Fullname') }}</label>
-                    <input id="name" name="name" type="text" autocomplete="name" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Full Name') }}" :value="old('name')" autofocus>
+                    <input id="name" name="name" type="text" autocomplete="name" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Full Name') }}" value="{{old('name')}}" autofocus>
 
                     <!-- email field -->
                     <label for="email-address" class="sr-only">{{ __('Email address') }}</label>
                     <input id="email-address" name="email" type="email" autocomplete="email" required
-                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Email address') }}" :value="old('email')">
+                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Email address') }}" value="{{old('email')}}">
 
                     <!-- password field -->
                     <label for="password" class="sr-only">{{ __('Password') }}</label>
@@ -46,7 +46,7 @@
 
                     <!-- password confirmation field -->
                     <label for="password_confirmation" class="sr-only">{{ __('Confirm Password') }}</label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Password Confirmation') }}" :value="old('name')">
+                    <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Password Confirmation') }}">
                 </div>
 
                 <button type="submit" class="group relative w-full flex justify-center py-2 px-4 mb-3 border border-transparent text-sm font-bold rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
