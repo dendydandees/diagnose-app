@@ -2,6 +2,18 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  .btn-primary {
+    @apply w-max flex items-center justify-center px-4 py-2 border border-transparent text-base shadow-md font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75;
+  }
+  .side-nav-link {
+    @apply w-full px-3 py-2 rounded-md text-base font-semibold hover:bg-indigo-700  hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75;
+  }
+  .side-nav-link-active {
+    @apply w-full px-3 py-2 rounded-md text-base font-semibold bg-indigo-500 text-white hover:bg-indigo-700  hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -12,7 +24,6 @@ html::-webkit-scrollbar {
 
 html::-webkit-scrollbar-thumb {
     background: #4f46e5;
-    border-radius: 8px;
 }
 
 html::-webkit-scrollbar-track {
