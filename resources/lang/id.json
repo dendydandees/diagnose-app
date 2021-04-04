@@ -6,7 +6,6 @@
     "Before proceeding, please check your email for a verification link.": "Sebelum melanjutkan, silahkan periksa email Anda untuk tautan verifikasi.",
     "click here to request another": "Klik disini untuk meminta lagi",
     "Confirm Password": "Konfirmasi Kata Sandi",
-    "Dashboard": "Dasbor",
     "E-Mail Address": "Alamat Email",
     "Email Password Reset Link": "Tautan Pengaturan Ulang Kata Sandi Email",
     "Email": "Email",
@@ -73,5 +72,16 @@
     "Register to Diagnose": "Daftarkan akun ke Diagnose",
     "Or don't have an account ?": "Atau belum mempunyai akun ?",
     "Already have an account ?": "Sudah memiliki akun ?",
-    "Silahkan Cek Email Anda" : "Please Check Your Email"
+    "Silahkan Cek Email Anda" : "Please Check Your Email",
+    "With Diagnose" : "Bersama Diagnose",
+    "Know Your Worries" : "Ketahui Kecemasanmu",
+    "Diagnose is an expert system for early detection of anxiety disorders." : "Diagnose merupakan sistem pakar untuk melakukan deteksi dini mengenai gangguan kecemasan.",
+    "Get Started" : "Memulai",
+    "Welcome" : "Selamat Datang",
+    "Excessive anxiety, difficult to control, and interfering with daily activities are Anxiety Disorders. With Diagnose, you can make early detection of the anxiety you experience." : "Rasa cemas yang berlebih, sulit dikontrol, dan mengganggu aktivitas sehari-hari itu merupakan Gangguan Kecemasan. Dengan Diagnose Anda dapat melakukan deteksi dini mengenai kecemasan yang kamu alami.",
+    "Anxiety Consultation" : "Konsultasi Kecemasan",
+    "Consultation History" : "Riwayat Konsultasi",
+    "Mental Health Articles" : "Artikel Kesehatan Mental",
+    "My Profile" : "Profil Saya",
+    "About Diagnose" : "Tentang Diagnose"
 }
