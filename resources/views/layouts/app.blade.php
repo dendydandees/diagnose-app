@@ -34,7 +34,7 @@
                 <div class="col-span-9">
                     <!-- Page Heading -->
                     @if (isset($header))
-                        <header class="bg-indigo-500 shadow">
+                        <header class="bg-purple-500 shadow">
                             <div class="py-6 px-3 lg:px-6">
                                 {{ $header }}
                             </div>
