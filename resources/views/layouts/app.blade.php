@@ -8,6 +8,7 @@
         <meta name="author" content="Dendy Dharmawan">
         <meta name="description" content="Diagnose merupakan sistem pakar untuk melakukan diagnosa dini mengenai gangguan kecemasan.">
         <meta name="keywords" content="{{ config('app.name', 'Laravel') }}, sistem pakar, gangguan kecemasan" />
+        <link rel="shortcut icon" href="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" type="image/x-icon">
 
         <title>{{ config('app.name', 'Laravel') }} - {{ __('Expert System for Diagnosis of Anxiety Disorders') }}</title>
 

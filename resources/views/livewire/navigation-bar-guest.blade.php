@@ -23,7 +23,7 @@
             <div class="flex-1 flex items-center justify-between sm:items-stretch">
               <div class="flex-shrink-0 flex items-center">
                   <a href="{{ route('welcome') }}" class="inline-block">
-                      <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-purple-500.svg" alt="Diagnose Logo">
+                      <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" alt="Diagnose Logo">
                   </a>
               </div>
 

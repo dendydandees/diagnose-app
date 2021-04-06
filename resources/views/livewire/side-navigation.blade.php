@@ -15,7 +15,7 @@
         <a href="{{ route('profile.show') }}" class="{{ Route::is('profile.show') ? 'side-nav-link-active' : 'side-nav-link' }}">
             {{ __('My Profile') }}
         </a>
-        <a href="#" class="{{ Route::is('welcome') ? 'side-nav-link-active' : 'side-nav-link' }}">
+        <a href="{{ route('about') }}" class="{{ Route::is('about') ? 'side-nav-link-active' : 'side-nav-link' }}">
             {{ __('About Diagnose') }}
         </a>
         <form method="POST" action="{{ route('logout') }}">
