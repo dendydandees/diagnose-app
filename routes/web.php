@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExpertController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Expert;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,23 @@ Route::middleware(['guest'])->group(function () {
 });
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $experts = Expert::all();
+        $experts_count = Expert::count();
+
+        return view('dashboard', compact('experts', 'experts_count'));
     })->name('dashboard');
+
     Route::get('/about', function () {
         return view('about');
     })->name('about');
+
+    Route::middleware(['admin', 'expert'])->group(function () {
+        Route::get('/user_consultation_history', function () {
+            return view('user-consultation-history');
+        })->name('userConsultationHistory');
+    });
+
+    Route::middleware(['admin'])->group(function () {
+        Route::resource('experts', ExpertController::class);
+    });
 });
