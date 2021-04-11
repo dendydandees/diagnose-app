@@ -1,12 +1,12 @@
 <x-app-layout>
   <x-slot name="header">
-      <h2 class="font-bold text-2xl text-white leading-tight">
+      <h2 class="font-bold text-2xl text-white leading-tight tracking-wider">
           {{ __('About Diagnose') }}
       </h2>
   </x-slot>
 
-  <section class="py-6 px-3 lg:px-6">
-      <div class="bg-white overflow-hidden shadow-xl px-4 py-8 sm:rounded-lg">
+  <section class="py-10 px-3 lg:px-6">
+      <div class="bg-white overflow-hidden shadow-md px-4 py-8 sm:rounded-lg">
           <div class="flex flex-col items-center">
             <img class="h-24 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" alt="Diagnose Logo">
             <p class="mt-8 text-center text-lg sm:max-w-lg md:text-xl">

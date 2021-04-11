@@ -6,7 +6,7 @@
                 <!-- Logo -->
                     <a href="{{ route('dashboard') }}" class="flex items-center hover:text-purple-500">
                         <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" alt="Diagnose Logo">
-                        <h1 class="ml-4 font-bold text-2xl hidden sm:inline-block">Diagnose</h1>
+                        <h1 class="ml-4 font-bold text-2xl hidden tracking-wider sm:inline-block">Diagnose</h1>
                     </a>
             </div>
 
@@ -66,9 +66,9 @@
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-purple-300 transition duration-150 ease-in-out">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                                    <span class="my-auto mx-2 line-clamp-1 max-w-1">
+                                <button class="max-w-1 flex flex-row justify-start items-center text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-purple-300 transition duration-150 ease-in-out" title="{{ Auth::user()->name }}">
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_path ? Storage::url('profile-photos/'.Auth::user()->profile_photo_path) : Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name }}" />
+                                    <span class="mx-2 line-clamp-1 text-left">
                                         {{ Auth::user()->name }}
                                     </span>
                                 </button>
@@ -110,7 +110,7 @@
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Logout') }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -143,7 +143,7 @@
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="flex-shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_path ? Storage::url('profile-photos/'.Auth::user()->profile_photo_path) : Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name }}" />
                     </div>
                 @endif
 

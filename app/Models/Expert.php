@@ -9,6 +9,10 @@ class Expert extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'position', 'company'
+    ];
+
     /**
      * Get the user that owns the expert.
      */

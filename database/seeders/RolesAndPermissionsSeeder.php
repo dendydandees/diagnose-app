@@ -24,6 +24,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $user = Role::updateOrCreate(['name' => 'user']);
 
         // create permissions
+        Permission::updateOrCreate(['name' => 'experts.*']);
         Permission::updateOrCreate(['name' => 'articles.*']);
         Permission::updateOrCreate(['name' => 'articles.view']);
 
@@ -31,6 +32,6 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $admin->givePermissionTo(Permission::all());
         $expert->givePermissionTo(['articles.*']);
-        $user->givePermissionTo('articles.view');
+        $user->givePermissionTo(['articles.view']);
     }
 }
