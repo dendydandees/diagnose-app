@@ -51,7 +51,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
+                        <tbody class="bg-white divide-y divide-gray-200 capitalize">
                             @forelse ($experts as $expert)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
@@ -61,26 +61,26 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10">
-                                            <img
-                                                class="h-10 w-10 rounded-full object-cover"
-                                                src="{{
-                                                    $expert->user->profile_photo_path != null
-                                                    ?
-                                                    Storage::url('profile-photos/'.$expert->user->profile_photo_path)
-                                                    :
-                                                    $expert->user->profile_photo_url }}
-                                                "
-                                                alt="{{ $expert->user->name }}">
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                {{ $expert->user->name }}
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img
+                                                    class="h-10 w-10 rounded-full object-cover"
+                                                    src="{{
+                                                        $expert->user->profile_photo_path != null
+                                                        ?
+                                                        Storage::url('profile-photos/'.$expert->user->profile_photo_path)
+                                                        :
+                                                        $expert->user->profile_photo_url }}
+                                                    "
+                                                    alt="{{ $expert->user->name }}">
                                             </div>
-                                            <div class="text-sm text-gray-500">
-                                                {{ $expert->user->email }}
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">
+                                                    {{ $expert->user->name }}
+                                                </div>
+                                                <div class="text-sm text-gray-500 lowercase">
+                                                    {{ $expert->user->email }}
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
@@ -108,9 +108,11 @@
                                     </td>
                                 </tr>
                             @empty
-                                <span class="text-base">
-                                    {{ __('Data not found, please add data!') }}
-                                </span>
+                                <div class="bg-white text-center p-6 mb-6 shadow-md rounded-lg">
+                                    <p class="text-lg font-semibold">
+                                        {{ __('Data not found, please add data!') }}
+                                    </p>
+                                </div>
                             @endforelse
                         </tbody>
                     </table>
@@ -275,7 +277,7 @@
                             x-on:livewire-upload-error="isUploading = false"
                             x-on:livewire-upload-progress="progress = $event.detail.progress"
                         >
-                            <label for="photoUpload" class="font-medium text-gray-700 text-sm block">
+                            <label for="photoUploadEdit" class="font-medium text-gray-700 text-sm block">
                                 {{ __('Upload Photo') }}
                             </label>
 
@@ -286,7 +288,7 @@
                             @endif
 
                             <!-- File Input -->
-                            <input x-ref="photo" id="photoUpload" type="file" class="hidden" wire:model="photoUpload">
+                            <input x-ref="photo" id="photoUploadEdit" type="file" class="hidden" wire:model="photoUpload">
 
                             <!-- Progress Bar -->
                             <div x-show="isUploading">
@@ -310,40 +312,40 @@
                     @endif
 
                     <div class="block">
-                        <label for="email" class="font-medium text-gray-700 text-sm block">
+                        <label for="emailEdit" class="font-medium text-gray-700 text-sm block">
                             {{ __('Email') }}
                         </label>
-                        <input id="email" wire:model.defer="email" type="email" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" autofocus>
+                        <input id="emailEdit" wire:model.defer="email" type="email" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" autofocus>
                         @error('email')
                             <x-jet-input-error for="email" class="mt-2" />
                         @enderror
                     </div>
 
                     <div class="block">
-                        <label for="name" class="font-medium text-gray-700 text-sm block">
+                        <label for="nameEdit" class="font-medium text-gray-700 text-sm block">
                             {{ __('Fullname') }}
                         </label>
-                        <input id="name" wire:model.defer="name" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
+                        <input id="nameEdit" wire:model.defer="name" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
                         @error('name')
                             <x-jet-input-error for="name" class="mt-2" />
                         @enderror
                     </div>
 
                     <div class="block">
-                        <label for="position" class="font-medium text-gray-700 text-sm block">
+                        <label for="positionEdit" class="font-medium text-gray-700 text-sm block">
                             {{ __('Position') }}
                         </label>
-                        <input id="position" wire:model.defer="position" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
+                        <input id="positionEdit" wire:model.defer="position" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
                         @error('position')
                             <x-jet-input-error for="position" class="mt-2" />
                         @enderror
                     </div>
 
                     <div class="block">
-                        <label for="company" class="font-medium text-gray-700 text-sm block">
+                        <label for="companyEdit" class="font-medium text-gray-700 text-sm block">
                             {{ __('Company') }}
                         </label>
-                        <input id="company" wire:model.defer="company" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
+                        <input id="companyEdit" wire:model.defer="company" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
                         @error('company')
                             <x-jet-input-error for="company" class="mt-2" />
                         @enderror
@@ -374,7 +376,7 @@
             </x-slot>
 
             <x-slot name="content">
-                <div class="space-y-4">
+                <div class="space-y-4 capitalize">
                     <img
                         src="{{ $photo_path ? Storage::url('profile-photos/'. $photo_path) : sprintf('https://ui-avatars.com/api/?name=%s&color=7F9CF5&background=EBF4FF', $name) }}"
                         alt="{{ $name }}"
@@ -384,7 +386,7 @@
                         <p class="font-bold">{{ __('Name') }}</p>
                         <p>{{ $name }}</p>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-2 lowercase">
                         <p class="font-bold">{{ __('Email') }}</p>
                         <p>{{ $email }}</p>
                     </div>

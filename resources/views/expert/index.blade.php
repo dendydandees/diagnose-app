@@ -8,8 +8,4 @@
   <section class="py-6 px-3 space-y-6 lg:px-6">
     @livewire('expert.expert-list')
   </section>
-
-  <section>
-
-  </section>
 </x-app-layout>

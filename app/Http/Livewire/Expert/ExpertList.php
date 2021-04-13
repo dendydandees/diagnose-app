@@ -28,7 +28,7 @@ class ExpertList extends Component
     public $expert_id, $name, $email, $password, $password_confirmation, $position, $company, $photo, $photo_path;
 
     protected $rules = [
-        'email' => 'required|email|max:255|unique:users',
+        'email' => 'required|email|max:64|unique:users',
         'name' => 'required|string|max:255',
         'position' => 'required|string',
         'company' => 'required',
@@ -44,15 +44,11 @@ class ExpertList extends Component
     ];
 
     protected $messages = [
-        'email.required' => 'Alamat Email tidak boleh kosong.',
         'email.email' => 'Format Alamat Email tidak valid.',
-        'name.required' => 'Nama Lengkap tidak boleh kosong.',
-        'name.string' => 'Nama Lengkap harus berupa huruf.',
-        'position.required' => 'Nama Posisi tidak boleh kosong.',
-        'position.string' => 'Nama Posisi harus berupa huruf.',
-        'company.required' => 'Nama Perusahaan tidak boleh kosong.',
-        'password.required' => 'Kata Sandi tidak boleh kosong.',
-        'password.confirmed' => 'Kata Sandi tidak cocok dengan Konfirmasi Kata Sandi.'
+        'password.confirmed' => 'Kata Sandi tidak cocok dengan Konfirmasi Kata Sandi.',
+        'regex' => 'format :attribute tidak valid.',
+        'string' => ':attribute harus berupa huruf.',
+        'required' => ':attribute tidak boleh kosong.'
     ];
 
     // reset the state
