@@ -69,6 +69,18 @@
 
                     @livewire('expert.expert-list')
                 </div>
+                <div>
+                    <div class="flex flex-row justify-between items-center mb-6">
+                        <h3 class="font-bold text-xl leading-tight tracking-wider">
+                            {{ __('Mental Health Articles') }}
+                        </h3>
+                        <a href="{{ route('articles.index') }}" class="link">
+                            {{ __('View more') }}
+                        </a>
+                    </div>
+
+                    @livewire('article.index')
+                </div>
             @endrole
         @else
             <div class="bg-white overflow-hidden shadow-md p-4 rounded-lg">

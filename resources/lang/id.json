@@ -14,6 +14,8 @@
     "Forgot your password?": "Lupa kata sandi Anda?",
     "Forgot Your Password?": "Lupa Kata Sandi Anda?",
     "Go Home": "Ke Halaman Utama",
+    "Back to Dashboard" : "Kembali ke Dashboard",
+    "Loading" : "Memuat",
     "Hello!": "Halo!",
     "If you did not create an account, no further action is required.": "Jika Anda tidak membuat akun, Anda tidak perlu melakukan apapun.",
     "If you did not receive the email": "Jika Anda tidak menerima email",
@@ -136,5 +138,18 @@
     "Are you sure you want to delete ": "Anda yakin ingin menghapus",
     "Once your account is deleted, all of its resources and data will be permanently deleted.": "Setelah akun Anda dihapus, semua sumber daya dan datanya akan dihapus secara permanen.",
     "Add Data" : "Tambah Data",
-    "Data not found, please add data!" : "Data tidak ditemukan, silahkan tambahkan data!"
+    "Data not found, please add data!" : "Data tidak ditemukan, silahkan tambahkan data!",
+    "See List Article" : "Lihat List Artikel",
+    "Title" : "Judul",
+    "Writer" : "Penulis",
+    "Content" : "Konten",
+    "Keywords" : "Kata Kunci",
+    "Created At" : "Dibuat Pada",
+    "Updated At" : "Diperbarui pada",
+    "Select Status" : "Pilih Status",
+    "Select Writer" : "Pilih Penulis",
+    "View Count" : "Jumlah Dilihat",
+    "Add Article" : "Tambahkan Artikel",
+    "Expert Not Found" : "Pakar Tidak Ditemukan",
+    "Separate a few keywords with a comma" : "Pisahkan beberapa keywords dengan koma"
 }
