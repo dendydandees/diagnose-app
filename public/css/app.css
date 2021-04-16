@@ -768,7 +768,7 @@ select {
 
 .btn-primary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+  background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
 }
 
 .btn-primary {
@@ -828,7 +828,7 @@ select {
 
 .btn-secondary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+  background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
 }
 
 .btn-secondary {
@@ -897,7 +897,7 @@ select {
 
 .btn-blue:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 
 .btn-blue {
@@ -957,7 +957,7 @@ select {
 
 .btn-green:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(4, 120, 87, var(--tw-bg-opacity));
+  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
 }
 
 .btn-green {
@@ -1017,7 +1017,7 @@ select {
 
 .btn-danger:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
+  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
 }
 
 .btn-danger {

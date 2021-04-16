@@ -16,5 +16,35 @@
         </span>
       </a>
     </div>
+
+    <div class="bg-white overflow-hidden shadow-md px-4 py-12 rounded-lg space-y-8 text-gray-700">
+      <div>
+        @foreach ($article->keywords as $keyword)
+          <span class="px-2 py-2 mr-2 rounded-lg bg-purple-200 capitalize text-purple-700 font-semibold text-sm">
+            {{ $keyword }}
+          </span>
+        @endforeach
+        <h3 class="text-2xl font-bold capitalize mt-4 mb-2">{{ $article->title }}</h3>
+        <p class="text-sm font-semibold">
+          {{ __('Updated At').' ' }}
+          <span class="text-purple-700 capitalize">
+            {{ $article->updated_at->locale('id')->format('d F Y') }}
+          </span>
+          {{ ' '.__('by').' ' }}
+          <span class="text-purple-700 capitalize">
+            {{ $article->writer }}
+          </span>
+        </p>
+      </div>
+      <img
+        class="mt-2 w-full h-96 {{ $article->images !== '' ? 'object-cover' : 'object-contain' }} rounded-md border border-gray-200 object-top"
+        src="{{ $article->images !== '' ? Storage::url('articles/'.$article->images) : 'https://tailwindui.com/img/logos/workflow-mark-purple-600.svg' }}"
+        alt="{{ $article->title }}"
+        style="filter: contrast(0.7)"
+      >
+      <div class="text-base">
+        {!! $article->body !!}
+      </div>
+    </div>
   </section>
 </x-app-layout>

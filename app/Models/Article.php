@@ -33,19 +33,8 @@ class Article extends Model
         $this->attributes['title'] = strtolower($value);
     }
 
-    public function getCreatedAtAttribute()
+    public function setStatusAttribute($value)
     {
-        Carbon::setLocale('id');
-
-        return Carbon::parse($this->attributes['created_at'])
-        ->format('d, M Y H:i');
-    }
-
-    public function getUpdatedAtAttribute()
-    {
-        Carbon::setLocale('id');
-
-        return \Carbon\Carbon::parse($this->attributes['updated_at'])
-        ->diffForHumans();
+        $this->attributes['status'] = strtolower($value);
     }
 }

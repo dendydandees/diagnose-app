@@ -47,7 +47,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         })->name('userConsultationHistory');
 
         // manage articles
-        Route::resource('articles', ArticleController::class)->except('show');
+        Route::resource('articles', ArticleController::class)->except('show', 'destroy');
     });
 
     // admin only middleware

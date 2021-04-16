@@ -20,7 +20,7 @@
 
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased text-gray-900">
 
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-bar-guest')

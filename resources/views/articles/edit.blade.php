@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-bold text-2xl text-white leading-tight tracking-wider">
-      {{ __('Add Article') }}
+      {{ __('Edit Article') }}
     </h2>
   </x-slot>
 
@@ -18,11 +18,12 @@
     </div>
 
     <div id="formContainer" class="hidden bg-white shadow-md rounded-lg p-4">
-      <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data" class="space-y-4">
+      <form method="POST" action="{{ route('articles.update', ['article' => $article->id]) }}" enctype="multipart/form-data" class="space-y-4">
+        @method('PUT')
         @csrf
 
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-          <div x-data="imageViewer()">
+          <div x-data="imageViewer('{{ $article->images !== '' ? Storage::url('articles/'.$article->images) : '' }}')">
             <label for="image" class="font-medium text-gray-700 text-sm block">
               {{ __('Upload Photo') }}
             </label>
@@ -75,7 +76,7 @@
           <label for="title" class="font-medium text-gray-700 text-sm block">
               {{ __('Title') }}
           </label>
-          <input id="title" name="title" autocomplete="title" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 @error('title') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" autofocus value="{{old('title')}}">
+          <input id="title" name="title" autocomplete="title" type="text" class="form-input mt-2 block w-full rounded-md border-gray-400 @error('title') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" autofocus value="{{ $article->title }}">
           @error('title')
               <x-jet-input-error for="title" class="mt-2" />
           @enderror
@@ -86,7 +87,7 @@
               {{ __('Content') }}
           </label>
           <textarea id="body" name="body" class="ckeditor form-textarea mt-2 block w-full rounded-md border-gray-400 @error('body') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
-            {{old('body')}}
+            {{ $article->body }}
           </textarea>
           @error('body')
               <x-jet-input-error for="body" class="mt-2" />
@@ -100,7 +101,7 @@
           <select id="status" name="status" autocomplete="status" class="form-select mt-2 block w-6/12 rounded-md border-gray-400 @error('status') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75 capitalize" required>
             <option disabled selected value="">{{ __('Select Status') }}</option>
             @foreach ($select_status as $status)
-              <option value="{{ $status }}" {{ strtolower(old('status')) == strtolower($status) ? 'selected' : '' }}>
+              <option value="{{ $status }}" {{ strtolower($article->status) == strtolower($status) ? 'selected' : '' }}>
                 {{ $status }}
               </option>
             @endforeach
@@ -114,7 +115,7 @@
           <label for="keywords" class="font-medium text-gray-700 text-sm block">
               {{ __('Keywords') }}
           </label>
-          <input id="keywords" name="keywords" autocomplete="keywords" type="text" class="form-input mt-2 block w-6/12 rounded-md border-gray-400 @error('keywords') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" value="{{old('keywords')}}">
+          <input id="keywords" name="keywords" autocomplete="keywords" type="text" class="form-input mt-2 block w-6/12 rounded-md border-gray-400 @error('keywords') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" value="{{ implode(",", $article->keywords) }}">
           <small class="leading-3 text-gray-700">
             <span class="text-red-500">*</span>
             {{ __('Separate a few keywords with a comma') }}
@@ -131,7 +132,7 @@
           <select id="writer" name="writer" autocomplete="writer" class="form-select mt-2 block w-6/12 rounded-md border-gray-400 @error('writer') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" required>
             <option disabled selected value="">{{ __('Select Writer') }}</option>
             @forelse ($experts as $expert)
-              <option value="{{ $expert->user->name }}" {{ strtolower(old('writer')) == strtolower($expert->user->name) ? 'selected' : '' }}>
+              <option value="{{ $expert->user->name }}" {{ strtolower($article->writer) == strtolower($expert->user->name) ? 'selected' : '' }}>
                 {{ $expert->user->name }}
               </option>
             @empty
@@ -157,9 +158,9 @@
   <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
     <script>
       // alpine.js
-      function imageViewer(){
+      function imageViewer(url){
         return{
-          imageUrl: '',
+          imageUrl: url,
 
           fileChosen(event) {
             this.fileToDataUrl(event, src => this.imageUrl = src)

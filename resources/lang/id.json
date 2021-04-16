@@ -88,6 +88,7 @@
     "Anxiety Consultation": "Konsultasi Kecemasan",
     "Consultation History": "Riwayat Konsultasi",
     "Mental Health Articles": "Artikel Kesehatan Mental",
+    "Detail Mental Health Articles" : "Detil Artikel Kesehatan Mental",
     "My Profile": "Profil Saya",
     "About Diagnose": "Tentang Diagnose",
     "Thank's for": "Terima kasih untuk",
@@ -140,7 +141,12 @@
     "Add Data" : "Tambah Data",
     "Data not found, please add data!" : "Data tidak ditemukan, silahkan tambahkan data!",
     "See List Article" : "Lihat List Artikel",
+    "by" : "oleh",
+    "Gender" : "Jenis Kelamin",
+    "Age" : "Umur",
+    "Years old" : "Tahun",
     "Title" : "Judul",
+    "Image" : "Gambar",
     "Writer" : "Penulis",
     "Content" : "Konten",
     "Keywords" : "Kata Kunci",
@@ -150,6 +156,9 @@
     "Select Writer" : "Pilih Penulis",
     "View Count" : "Jumlah Dilihat",
     "Add Article" : "Tambahkan Artikel",
+    "Edit Article" : "Edit Artikel",
     "Expert Not Found" : "Pakar Tidak Ditemukan",
-    "Separate a few keywords with a comma" : "Pisahkan beberapa keywords dengan koma"
+    "Separate a few keywords with a comma" : "Pisahkan beberapa keywords dengan koma",
+    "After an article is deleted, all its resources and data will be permanently deleted." : "Setelah artikel dihapus, semua sumber daya dan datanya akan dihapus secara permanen.",
+    "Delete Article" : "Hapus Artikel"
 }
