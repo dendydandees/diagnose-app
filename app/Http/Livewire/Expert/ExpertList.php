@@ -210,8 +210,10 @@ class ExpertList extends Component
     // render the components
     public function render()
     {
+        Route::is('dashboard') ? $count = 5 : $count = 10;
+
         return view('livewire.expert.expert-list', [
-            'experts' => Expert::with('user')->orderBy('id', 'desc')->paginate(10),
+            'experts' => Expert::with('user')->orderBy('id', 'desc')->paginate($count),
         ]);
     }
 }
