@@ -51,6 +51,9 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Hospital Name') }}
                                 </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Status') }}
+                                </th>
                                 <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Actions</span>
                                 </th>
@@ -96,6 +99,15 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="text-sm text-gray-900">
                                             {{ $expert->company }}
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="text-sm text-gray-900">
+                                            {{
+                                                $expert->user->email_verified_at != null
+                                                ? $expert->user->email_verified_at->locale('id')->format('d F Y, H:i')
+                                                : __('Not Verified')
+                                            }}
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right font-medium space-x-2">
@@ -337,6 +349,36 @@
                     </div>
 
                     <div class="block">
+                        <label for="verif_value" class="font-medium text-gray-700 text-sm block">
+                            {{ __('Status') }}
+                        </label>
+                        <div class="mt-4 space-y-4">
+                            @php
+                                $verified_item = collect([true, false]);
+                            @endphp
+                            @foreach ($verified_item as $item)
+                                <div class="flex items-center">
+                                    <input
+                                        wire:model.defer="verif_value"
+                                        id="verifEdit{{ $item == true ? 'True' : 'False' }}"
+                                        name="verif_value"
+                                        type="radio"
+                                        value="{{ $item == true ? 1 : 0 }}"
+                                        class="form-radio focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300"
+                                        {{ $verif_value == $item ? 'checked' : '' }}
+                                    >
+                                    <label for="verifEdit{{ $item == true ? 'True' : 'False' }}" class="ml-3 block text-sm font-medium text-gray-700">
+                                        {{ $item == true ? __('Verified') : __('Not Verified') }}
+                                    </label>
+                                </div>
+                            @endforeach
+                        </div>
+                        @error('verif_value')
+                            <x-jet-input-error for="verif_value" class="mt-2" />
+                        @enderror
+                    </div>
+
+                    <div class="block">
                         <label for="positionEdit" class="font-medium text-gray-700 text-sm block">
                             {{ __('Position') }}
                         </label>
@@ -387,19 +429,29 @@
                         alt="{{ $name }}"
                         class="rounded-full h-20 w-20 object-cover"
                     >
-                    <div class="space-y-2">
+                    <div class="space-y-2 capitalize">
                         <p class="font-bold">{{ __('Name') }}</p>
                         <p>{{ $name }}</p>
                     </div>
-                    <div class="space-y-2 lowercase">
+                    <div class="space-y-2 capitalize">
                         <p class="font-bold">{{ __('Email') }}</p>
-                        <p>{{ $email }}</p>
+                        <p class="lowercase">{{ $email }}</p>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-2 capitalize">
+                        <p class="font-bold">{{ __('Status') }}</p>
+                        <p>
+                            {{
+                                $verified != null
+                                ? $verified->locale('id')->format('d F Y, H:i')
+                                : __('Not Verified')
+                            }}
+                        </p>
+                    </div>
+                    <div class="space-y-2 capitalize">
                         <p class="font-bold">{{ __('Position') }}</p>
                         <p>{{ $position }}</p>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-2 capitalize">
                         <p class="font-bold">{{ __('Company') }}</p>
                         <p>{{ $company }}</p>
                     </div>

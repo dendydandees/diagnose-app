@@ -25,7 +25,7 @@ class ExpertList extends Component
     // state form and expert data
     public $expert_account = '';
     public $photoUpload;
-    public $expert_id, $name, $email, $password, $password_confirmation, $position, $company, $photo, $photo_path;
+    public $expert_id, $name, $email, $verified, $verif_value, $password, $password_confirmation, $position, $company, $photo, $photo_path;
 
     protected $rules = [
         'email' => 'required|email|max:64|unique:users',
@@ -54,7 +54,7 @@ class ExpertList extends Component
     // reset the state
     public function resetFilters()
     {
-        $this->reset(['expert_id', 'expert_account', 'name', 'email', 'password', 'password_confirmation', 'position', 'company', 'photo', 'photo_path', 'photoUpload']);
+        $this->reset(['expert_id', 'expert_account', 'name', 'email', 'verified', 'verif_value', 'password', 'password_confirmation', 'position', 'company', 'photo', 'photo_path', 'photoUpload']);
     }
 
     public function mount()
@@ -130,11 +130,18 @@ class ExpertList extends Component
         $user->update([
             'email' =>  $this->email,
             'name' => $this->name,
+            'email_verified_at' => now(),
         ]);
         $user->expert()->update([
             'position' => $this->position,
             'company' => $this->company,
         ]);
+
+        if ($this->verif_value == false) {
+            $user->forceFill([
+                'email_verified_at' => null,
+            ])->save();
+        }
 
         session()->flash('message', 'Akun Pakar berhasil diperbarui');
 
@@ -174,6 +181,8 @@ class ExpertList extends Component
         $this->expert_account = User::findOrFail($id);
         $this->name = $this->expert_account->name;
         $this->email = $this->expert_account->email;
+        $this->verified = $this->expert_account->email_verified_at;
+        $this->verified !== null ? $this->verif_value = true : $this->verif_value = false;
         $this->position = $this->expert_account->expert->position;
         $this->company = $this->expert_account->expert->company;
         $this->photo = $this->expert_account->profile_photo_url;
@@ -189,6 +198,7 @@ class ExpertList extends Component
         $this->expert_account = User::findOrFail($id);
         $this->name = $this->expert_account->name;
         $this->email = $this->expert_account->email;
+        $this->verified = $this->expert_account->email_verified_at;
         $this->position = $this->expert_account->expert->position;
         $this->company = $this->expert_account->expert->company;
         $this->photo = $this->expert_account->profile_photo_url;
