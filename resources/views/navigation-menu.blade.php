@@ -68,13 +68,13 @@
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="max-w-1 flex flex-row justify-start items-center text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-purple-300 transition duration-150 ease-in-out" title="{{ Auth::user()->name }}">
                                     <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_path ? Storage::url('profile-photos/'.Auth::user()->profile_photo_path) : Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name }}" />
-                                    <span class="mx-2 line-clamp-1 text-left">
+                                    <span class="mx-2 line-clamp-1 text-left capitalize">
                                         {{ Auth::user()->name }}
                                     </span>
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 capitalize">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

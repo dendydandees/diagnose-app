@@ -12,7 +12,12 @@
         </div>
     @endif
 
-    <div wire:model="sessionShow" class="transition duration-150 ease-in-out">
+    <div
+        wire:model="sessionShow"
+        x-data="{}"
+        x-init="setTimeout(() => { $wire.set('sessionShow', false) }, 3000);"
+        class="transition duration-150 ease-in-out"
+    >
         @if (session()->has('message'))
             <div class="text-sm fixed flex flex-row justify-between items-center px-4 py-2 right-6 bottom-6 text-white bg-green-600 border border-transparent rounded-md">
                 <span class="font-medium mr-4">

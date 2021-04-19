@@ -110,7 +110,7 @@
     </div>
     {{ $articles->links() }}
 
-    <div x-data="{ showSession: true }" x-show.transition.in="showSession" class="transition duration-150 ease-in-out">
+    <div x-data="{ showSession: true }" x-show.transition.in="showSession" x-init="setTimeout(() => showSession = false, 3000)" class="transition duration-150 ease-in-out">
       @if (session()->has('message'))
         <div class="text-sm fixed flex flex-row justify-between items-center px-4 py-2 right-6 bottom-6 text-white bg-green-600 border border-transparent rounded-md">
           <span class="font-medium mr-4">

@@ -100,7 +100,7 @@ class ExpertList extends Component
         ]);
         $user->assignRole('expert');
 
-        session()->flash('message', 'Akun Expert berhasil disimpan');
+        session()->flash('message', 'Akun Pakar berhasil disimpan');
 
         return redirect()->to('/experts');
     }
@@ -136,7 +136,7 @@ class ExpertList extends Component
             'company' => $this->company,
         ]);
 
-        session()->flash('message', 'Akun Expert berhasil di edit');
+        session()->flash('message', 'Akun Pakar berhasil diperbarui');
 
         return redirect()->to('/experts');
     }
@@ -152,7 +152,7 @@ class ExpertList extends Component
         }
         User::destroy($id);
 
-        session()->flash('message', 'Akun Expert berhasil dihapus');
+        session()->flash('message', 'Akun Pakar berhasil dihapus');
 
         return redirect()->to('/experts');
     }

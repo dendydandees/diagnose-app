@@ -29,7 +29,7 @@
                             </span>
                         @endif
                     @endforeach
-                    <h5 class="mt-4 mb-2 group-hover:text-purple-700 text-xl font-bold leading-normal tracking-wide line-clamp-2 capitalize">
+                    <h5 class="mt-4 mb-2 group-hover:text-purple-700 text-xl font-bold leading-normal tracking-wide line-clamp-2 capitalize" title="{{ ucwords($hot_article->title) }}">
                         {{ $hot_article->title }}
                     </h5>
                     <div class="text-base line-clamp-5">
@@ -55,7 +55,7 @@
                                     </span>
                                 @endif
                             @endforeach
-                            <h5 class="mt-4 mb-2 group-hover:text-purple-700 text-lg font-bold leading-normal tracking-wide line-clamp-2 capitalize">
+                            <h5 class="mt-4 mb-2 group-hover:text-purple-700 text-lg font-bold leading-normal tracking-wide line-clamp-2 capitalize" title="{{ ucwords($article->title) }}">
                                 {{ $article->title }}
                             </h5>
                             <div class="text-base line-clamp-3">
