@@ -65,6 +65,47 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+        @role('user')
+            <!-- Gender -->
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label for="gender" value="{{ __('Gender') }}" />
+                @php
+                    $gender = collect(['male', 'female']);
+                @endphp
+                <select name="gender" id="gender" class="mt-1 block w-full capitalize border-gray-300 focus:border-purple-300 focus:ring focus:ring-purple-200 focus:ring-opacity-50 rounded-md shadow-sm" wire:model.defer="state.user_profile.gender">
+                    @foreach ($gender as $item)
+                        <option value="{{ $item }}" {{ auth()->user()->userProfile->gender == $item ? 'selected' : '' }}>
+                            {{ $item === 'male' ? 'Laki-Laki' : 'Perempuan' }}
+                        </option>
+                    @endforeach
+                </select>
+                <x-jet-input-error for="gender" class="mt-2" />
+            </div>
+
+            <!-- Age -->
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label for="age" value="{{ __('Age') }}" />
+                <x-jet-input id="age" type="number" min="17" max="70" class="mt-1 block w-full" wire:model.defer="state.user_profile.age" />
+                <x-jet-input-error for="age" class="mt-2" />
+            </div>
+        @endrole
+
+        @role('expert')
+            <!-- Position -->
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label for="position" value="{{ __('Position') }}" />
+                <x-jet-input id="position" type="text" class="mt-1 block w-full" wire:model.defer="state.expert.position"/>
+                <x-jet-input-error for="position" class="mt-2" />
+            </div>
+
+            <!-- Company -->
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label for="company" value="{{ __('Company') }}" />
+                <x-jet-input id="company" type="text" class="mt-1 block w-full" wire:model.defer="state.expert.company"/>
+                <x-jet-input-error for="company" class="mt-2" />
+            </div>
+        @endrole
     </x-slot>
 
     <x-slot name="actions">

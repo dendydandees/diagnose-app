@@ -37,7 +37,25 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'email' => $input['email'],
             ])->save();
 
-            redirect()->route('profile.show');;
+            // for expert update profile
+            if ($user->hasRole('expert')) {
+                $user->expert()->update([
+                    'position' => $input['expert']['position'],
+                    'company' => $input['expert']['company'],
+                ]);
+            }
+
+            // for user update profile
+            if ($user->hasRole('user')) {
+                $user->userProfile()->update([
+                    'gender' => $input['user_profile']['gender'],
+                    'age' => $input['user_profile']['age'],
+                ]);
+            }
+
+            session()->flash('message', 'Profil berhasil diperbarui');
+
+            redirect()->route('profile.show');
         }
     }
 

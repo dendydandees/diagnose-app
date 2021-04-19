@@ -19,7 +19,7 @@
                 <!-- Current Profile Photo -->
                 <div>
                     <img src="{{ Auth::user()->profile_photo_path ? Storage::url('profile-photos/'.Auth::user()->profile_photo_path) : Auth::user()->profile_photo_url}}" alt="{{ auth()->user()->name }}" class="rounded-full h-20 w-20 object-cover mx-auto">
-                    <span class="block mt-6 font-semibold text-xl">
+                    <span class="block mt-6 font-semibold text-xl capitalize">
                         {{ auth()->user()->name }}
                     </span>
                 </div>
@@ -43,7 +43,7 @@
                                 {{ auth()->user()->userProfile->gender == "male" ? 'Laki - Laki' : 'Perempuan' }}
                             </span>
                             <span class="block font-semibold text-base text-gray-500">
-                                {{ auth()->user()->userProfile->age }}
+                                {{ auth()->user()->userProfile->age }} {{ __('Years old') }}
                             </span>
                         @endisset
                     @endrole
@@ -99,4 +99,19 @@
         </div>
 
     </section>
+
+    <div x-data="{ showSession: true }" x-show.transition.in="showSession" x-init="setTimeout(() => showSession = false, 3000)" class="transition duration-150 ease-in-out">
+      @if (session()->has('message'))
+        <div class="text-sm fixed flex flex-row justify-between items-center px-4 py-2 right-6 bottom-6 text-white bg-green-600 border border-transparent rounded-md">
+          <span class="font-medium mr-4">
+              {{ session('message') }}
+          </span>
+          <button @click="showSession = !showSession">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      @endif
+    </div>
 </x-app-layout>
