@@ -11,7 +11,7 @@
                 {{ __('Mental Health Articles') }}
             </a>
         @else
-            <a href="#" class="{{ Route::is('welcome') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
+            <a href="{{ route('symptoms.index') }}" class="{{ Route::is('symptoms.index') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
                 {{ __('Symptom Data') }}
             </a>
             <a href="#" class="{{ Route::is('welcome') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">

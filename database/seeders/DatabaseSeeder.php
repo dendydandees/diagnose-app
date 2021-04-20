@@ -18,11 +18,13 @@ class DatabaseSeeder extends Seeder
             $this->call([
                 RolesAndPermissionsSeeder::class,
                 UserSeeder::class,
+                SymptomSeeder::class,
             ]);
         } else {
             $this->call([
                 RolesAndPermissionsSeeder::class,
                 UserSeeder::class,
+                SymptomSeeder::class,
             ]);
         }
     }

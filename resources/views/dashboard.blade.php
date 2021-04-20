@@ -6,15 +6,18 @@
     </x-slot>
 
     <section class="py-10 px-3 lg:px-6 space-y-14">
+        {{-- show on admin and expert --}}
         @hasanyrole('admin|expert')
             <div class="grid grid-cols-3 gap-x-4 text-center">
                 <div class="bg-white shadow-md p-4 rounded-lg">
                     <div class="flex flex-col items-center py-4">
+                        {{-- show on expert --}}
                         @role('expert')
                             <h4 class="text-lg font-semibold tracking-wider">
                                 {{ __('Number of Consultations') }}
                             </h4>
                             <span class="text-2xl font-semibold mt-6">24</span>
+                        {{-- show on admin --}}
                         @else
                             <h4 class="text-lg font-semibold tracking-wider">
                                 {{ __('Number of Expert') }}
@@ -25,6 +28,7 @@
                         @endrole
                     </div>
                 </div>
+                {{-- show on admin and expert --}}
                 <div class="bg-white shadow-md p-4 rounded-lg">
                     <div class="flex flex-col items-center py-4">
                         <h4 class="text-lg font-semibold tracking-wider">
@@ -43,6 +47,7 @@
                 </div>
             </div>
 
+            {{-- show on expert --}}
             @role('expert')
                 <div>
                     <div class="flex flex-row justify-between items-center mb-6">
@@ -56,6 +61,7 @@
 
                     <x-user-consultation-history-table :history="$history ?? ''"/>
                 </div>
+            {{-- show on admin --}}
             @else
                 <div>
                     <div class="flex flex-row justify-between items-center mb-6">
@@ -69,19 +75,34 @@
 
                     @livewire('expert.expert-list')
                 </div>
-                <div>
-                    <div class="flex flex-row justify-between items-center mb-6">
-                        <h3 class="font-bold text-xl leading-tight tracking-wider">
-                            {{ __('Mental Health Articles') }}
-                        </h3>
-                        <a href="{{ route('articles.index') }}" class="link">
-                            {{ __('View more') }}
-                        </a>
-                    </div>
-
-                    @livewire('article.index')
-                </div>
             @endrole
+
+            {{-- show on admin and expert --}}
+            <div>
+                <div class="flex flex-row justify-between items-center mb-6">
+                    <h3 class="font-bold text-xl leading-tight tracking-wider">
+                        {{ __('Mental Health Articles') }}
+                    </h3>
+                    <a href="{{ route('articles.index') }}" class="link">
+                        {{ __('View more') }}
+                    </a>
+                </div>
+
+                @livewire('article.index')
+            </div>
+            <div>
+                <div class="flex flex-row justify-between items-center mb-6">
+                    <h3 class="font-bold text-xl leading-tight tracking-wider">
+                        {{ __('Symptom Data') }}
+                    </h3>
+                    <a href="{{ route('symptoms.index') }}" class="link">
+                        {{ __('View more') }}
+                    </a>
+                </div>
+
+                @livewire('symptom.symptom-list')
+            </div>
+        {{-- show on user --}}
         @else
             <div class="bg-white overflow-hidden shadow-md p-4 rounded-lg">
                 <div class="w-7/12 space-y-4">

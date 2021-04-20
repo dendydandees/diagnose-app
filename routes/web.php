@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ExpertController;
+use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Expert;
 
@@ -48,6 +49,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         // manage articles
         Route::resource('articles', ArticleController::class)->except('show', 'destroy');
+
+        // manage symptoms
+        Route::resource('symptoms', SymptomController::class)->only('index');
     });
 
     // admin only middleware
