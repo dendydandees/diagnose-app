@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Livewire\WithPagination;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -23,9 +24,7 @@ class ExpertList extends Component
     // state session and add data button show
     public $show, $sessionShow = false;
     // state form and expert data
-    public $expert_account = '';
-    public $photoUpload;
-    public $expert_id, $name, $email, $verified, $verif_value, $password, $password_confirmation, $position, $company, $photo, $photo_path;
+    public $expert_account, $expert_id, $name, $email, $verified, $verif_value, $password, $password_confirmation, $position, $company, $photo, $photo_path, $photoUpload, $count;
 
     protected $rules = [
         'email' => 'required|email|max:64|unique:users',
@@ -60,6 +59,7 @@ class ExpertList extends Component
     public function mount()
     {
         $this->show = !Route::is('dashboard') ? true : false;
+        Route::is('dashboard') ? $this->count = 5 : $this->count = 10;
     }
 
     public function updated($propertyName)
@@ -108,6 +108,22 @@ class ExpertList extends Component
     // edit expert
     public function saveEditExpert($id)
     {
+        Validator::make(
+            [
+                'email' =>  $this->email,
+                'name' => $this->name,
+                'position' => $this->position,
+                'company' => $this->company,
+            ],
+            [
+                'email' => 'required|email|max:64',
+                'name' => 'required|string|max:255',
+                'position' => 'required|string',
+                'company' => 'required',
+            ],
+            $this->messages
+        )->validate();
+
         $user = User::findOrFail($id);
 
         if ($this->photoUpload != '') {
@@ -220,10 +236,8 @@ class ExpertList extends Component
     // render the components
     public function render()
     {
-        Route::is('dashboard') ? $count = 5 : $count = 10;
-
         return view('livewire.expert.expert-list', [
-            'experts' => Expert::with('user')->orderBy('id', 'desc')->paginate($count),
+            'experts' => Expert::with('user')->orderBy('id', 'desc')->paginate($this->count),
         ]);
     }
 }
