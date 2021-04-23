@@ -164,7 +164,7 @@
     "Add Article" : "Tambahkan Artikel",
     "Edit Article" : "Edit Artikel",
     "Expert Not Found" : "Pakar Tidak Ditemukan",
-    "Separate a few keywords with a comma" : "Pisahkan beberapa keywords dengan koma",
+    "Separate a few keywords with a comma" : "Pisahkan beberapa kata kunci / keyword dengan koma",
     "After an article is deleted, all its resources and data will be permanently deleted." : "Setelah artikel dihapus, semua sumber daya dan datanya akan dihapus secara permanen.",
     "Delete Article" : "Hapus Artikel",
     "Symptom Code" : "Kode Gejala",
@@ -173,6 +173,13 @@
     "Detail Symptom" : "Detail Gejala",
     "Code" : "Kode",
     "Edit Symptom" : "Edit Gejala",
-    "Select Code" : "Pilih Code",
-    "Add Symptom" : "Tambah Gejala"
+    "Select Code" : "Pilih Kode",
+    "Add Symptom" : "Tambah Gejala",
+    "Disease Code" : "Kode Gangguan",
+    "Add Disease" : "Tambah Gangguan",
+    "Delete Disease" : "Hapus Gangguan",
+    "Detail Disease" : "Detail Gangguan",
+    "After an disease is deleted, all its resources and data will be permanently deleted." : "Setelah gangguan dihapus, semua sumber daya dan datanya akan dihapus secara permanen.",
+    "Description" : "Deskripsi",
+    "Edit Disease" : "Edit Gangguan"
 }

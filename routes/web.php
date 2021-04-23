@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         // manage symptoms
         Route::resource('symptoms', SymptomController::class)->only('index');
+
+        // manage diseases
+        Route::resource('diseases', DiseaseController::class)->except('show');
     });
 
     // admin only middleware
