@@ -153,7 +153,7 @@
   </section>
 </x-app-layout>
 
-@sectionMissing('navigation')
+@sectionMissing('script')
   <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
     <script>
       // alpine.js

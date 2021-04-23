@@ -48,7 +48,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 max-w-sm">
+                                    <td class="px-6 py-4">
                                         <span class="text-sm text-gray-900">
                                             {{ $symptom->name }}
                                         </span>
@@ -108,10 +108,10 @@
         <x-slot name="content">
             <form wire:submit.prevent="saveNewSymptom" class="flex flex-col space-y-4">
                 <div class="block w-6/12">
-                    <label for="codeEdit" class="font-medium text-gray-700 text-sm block">
+                    <label for="code" class="font-medium text-gray-700 text-sm block">
                         {{ __('Code') }}
                     </label>
-                   <select id="codeEdit" wire:model.defer="code" class="form-select mt-2 block w-full rounded-md bg-gray-200 text-gray-800 border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" disabled>
+                   <select id="code" wire:model.defer="code" class="form-select mt-2 block w-full rounded-md bg-gray-200 text-gray-800 border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" disabled>
                         <option selected value="{{ $code }}">
                             {{ $code }}
                         </option>
@@ -122,10 +122,10 @@
                 </div>
 
                 <div class="block">
-                    <label for="nameEdit" class="font-medium text-gray-700 text-sm block">
+                    <label for="name" class="font-medium text-gray-700 text-sm block">
                         {{ __('Name') }}
                     </label>
-                    <textarea id="nameEdit" wire:model.defer="name" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" rows="3"></textarea>
+                    <textarea id="name" wire:model.defer="name" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" rows="3"></textarea>
                     @error('name')
                         <x-jet-input-error for="name" class="mt-2" />
                     @enderror

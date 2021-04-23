@@ -61,13 +61,13 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 capitalize whitespace-nowrap max-w-xs">
-                                        <span class="text-sm text-gray-900 line-clamp-1" title="{{ ucwords($article->title )}}">
+                                    <td class="px-6 py-4 capitalize">
+                                        <span class="text-sm text-gray-900 line-clamp-2 w-40" title="{{ ucwords($article->title )}}">
                                             {{ $article->title }}
                                         </span>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap max-w-xs capitalize">
-                                        <span class="text-sm text-gray-900 line-clamp-1" title="{{ ucwords($article->writer )}}">
+                                    <td class="px-6 py-4 capitalize">
+                                        <span class="text-sm text-gray-900 line-clamp-1 w-20" title="{{ ucwords($article->writer )}}">
                                             {{ $article->writer }}
                                         </span>
                                     </td>
