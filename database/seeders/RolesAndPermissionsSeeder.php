@@ -29,13 +29,17 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::updateOrCreate(['name' => 'articles.view']);
         Permission::updateOrCreate(['name' => 'symptoms.*']);
         Permission::updateOrCreate(['name' => 'symptoms.view']);
+        Permission::updateOrCreate(['name' => 'diseases.*']);
+        Permission::updateOrCreate(['name' => 'diseases.view']);
 
         // assign created permissions
 
         $admin->givePermissionTo(Permission::all());
         $expert->givePermissionTo(['articles.*']);
         $expert->givePermissionTo(['symptoms.*']);
+        $expert->givePermissionTo(['diseases.*']);
         $user->givePermissionTo(['articles.view']);
         $user->givePermissionTo(['symptoms.view']);
+        $expert->givePermissionTo(['diseases.view']);
     }
 }

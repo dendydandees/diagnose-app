@@ -181,5 +181,6 @@
     "Detail Disease" : "Detail Gangguan",
     "After an disease is deleted, all its resources and data will be permanently deleted." : "Setelah gangguan dihapus, semua sumber daya dan datanya akan dihapus secara permanen.",
     "Description" : "Deskripsi",
-    "Edit Disease" : "Edit Gangguan"
+    "Edit Disease" : "Edit Gangguan",
+    "Articles are being prepared by Diagnose, please come back later!" : "Artikel sedang disiapkan oleh Diagnose, kembali lagi nanti ya !"
 }

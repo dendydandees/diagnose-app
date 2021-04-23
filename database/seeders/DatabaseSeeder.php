@@ -19,12 +19,14 @@ class DatabaseSeeder extends Seeder
                 RolesAndPermissionsSeeder::class,
                 UserSeeder::class,
                 SymptomSeeder::class,
+                DiseaseSeeder::class,
             ]);
         } else {
             $this->call([
                 RolesAndPermissionsSeeder::class,
                 UserSeeder::class,
                 SymptomSeeder::class,
+                DiseaseSeeder::class,
             ]);
         }
     }
