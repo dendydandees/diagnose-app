@@ -10,4 +10,9 @@ class Symptom extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'code'];
+
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
 }
