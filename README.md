@@ -10,6 +10,14 @@ composer install
 sudo service mysql start
 mysql -u <username> -p
 
+!-- use your own database account,
+!-- edit the env file if the db_username and db_pasword not the same,
+!-- and then create a database like env file
+
+## before run server do migrating and seeding
+php artisan migrate
+php artisan db:seed
+
 ## development start
 php artisan serve
 ```
