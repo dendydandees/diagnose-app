@@ -40,6 +40,24 @@
                     <input id="email-address" name="email" type="email" autocomplete="email" required
                     class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Email address') }}" value="{{old('email')}}">
 
+                    <!-- gender field -->
+                    <label for="gender" class="sr-only">{{ __('Gender') }}</label>
+                    @php
+                        $gender = collect(['male', 'female']);
+                    @endphp
+                    <select name="gender" id="gender" class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" required>
+                        @foreach ($gender as $item)
+                            <option value="{{ $item }}" {{ old('gender') == $item ? 'selected' : '' }}>
+                                {{ $item === 'male' ? 'Laki-Laki' : 'Perempuan' }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    <!-- age field -->
+                    <label for="age" class="sr-only">{{ __('Age') }}</label>
+                    <input id="age" name="age" type="number" autocomplete="age" min="17" max="70" required
+                    class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Age') }}" value="{{old('age')}}">
+
                     <!-- password field -->
                     <label for="password" class="sr-only">{{ __('Password') }}</label>
                     <input id="password" name="password" type="password" autocomplete="new-password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Password') }}">

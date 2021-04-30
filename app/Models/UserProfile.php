@@ -10,6 +10,15 @@ class UserProfile extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'gender', 'age'
+    ];
+
+    /**
      * Get the user that owns the user profile.
      */
     public function user()

@@ -79,12 +79,12 @@
     "Sign Up": "Daftar",
     "Fullname": "Nama Lengkap",
     "Email address": "Alamat email",
-    "Password Confirmation": "Konfirmasi Password",
+    "Password Confirmation": "Konfirmasi Kata Sandi",
     "Sign in to your account": "Masuk ke akun Anda",
     "Register to Diagnose": "Daftarkan akun ke Diagnose",
     "Or don't have an account ?": "Atau belum mempunyai akun ?",
     "Already have an account ?": "Sudah memiliki akun ?",
-    "Silahkan Cek Email Anda": "Please Check Your Email",
+    "Please Check Your Email": "Silahkan Cek Email Anda",
     "With Diagnose": "Bersama Diagnose",
     "Know Your Worries": "Ketahui Kecemasanmu",
     "Diagnose is an expert system for early detection of anxiety disorders.": "Diagnose merupakan sistem pakar untuk melakukan deteksi dini mengenai gangguan kecemasan.",
@@ -182,5 +182,6 @@
     "After an disease is deleted, all its resources and data will be permanently deleted." : "Setelah gangguan dihapus, semua sumber daya dan datanya akan dihapus secara permanen.",
     "Description" : "Deskripsi",
     "Edit Disease" : "Edit Gangguan",
-    "Articles are being prepared by Diagnose, please come back later!" : "Artikel sedang disiapkan oleh Diagnose, kembali lagi nanti ya !"
+    "Articles are being prepared by Diagnose, please come back later!" : "Artikel sedang disiapkan oleh Diagnose, kembali lagi nanti ya !",
+    "Disease" : "Gangguan"
 }
