@@ -28,13 +28,16 @@
                         @endrole
                     </div>
                 </div>
+
                 {{-- show on admin and expert --}}
                 <div class="bg-white shadow-md p-4 rounded-lg">
                     <div class="flex flex-col items-center py-4">
                         <h4 class="text-lg font-semibold tracking-wider">
                             {{ __('Number of Symptoms') }}
                         </h4>
-                        <span class="text-2xl font-semibold mt-6">16</span>
+                        <span class="text-2xl font-semibold mt-6">
+                            {{ $symptoms_count }}
+                        </span>
                     </div>
                 </div>
                 <div class="bg-white shadow-md p-4 rounded-lg">
@@ -42,7 +45,9 @@
                         <h4 class="text-lg font-semibold tracking-wider">
                             {{ __('Number of Diseases') }}
                         </h4>
-                        <span class="text-2xl font-semibold mt-6">8</span>
+                        <span class="text-2xl font-semibold mt-6">
+                            {{ $diseases_count }}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -101,6 +106,18 @@
                 </div>
 
                 @livewire('symptom.symptom-list')
+            </div>
+            <div>
+                <div class="flex flex-row justify-between items-center mb-6">
+                    <h3 class="font-bold text-xl leading-tight tracking-wider">
+                        {{ __('Disease Data') }}
+                    </h3>
+                    <a href="{{ route('diseases.index') }}" class="link">
+                        {{ __('View more') }}
+                    </a>
+                </div>
+
+                @livewire('disease.disease-list')
             </div>
         {{-- show on user --}}
         @else

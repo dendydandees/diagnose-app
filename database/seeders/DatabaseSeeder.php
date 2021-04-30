@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 SymptomSeeder::class,
                 DiseaseSeeder::class,
+                ArticleSeeder::class
             ]);
         } else {
             $this->call([
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 SymptomSeeder::class,
                 DiseaseSeeder::class,
+                ArticleSeeder::class
             ]);
         }
     }

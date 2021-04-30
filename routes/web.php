@@ -6,6 +6,8 @@ use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Expert;
+use App\Models\Disease;
+use App\Models\Symptom;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +28,11 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     // dashboard
     Route::get('/dashboard', function () {
-        $experts = Expert::all();
         $experts_count = Expert::count();
+        $symptoms_count = Symptom::count();
+        $diseases_count = Disease::count();
 
-        return view('dashboard', compact('experts', 'experts_count'));
+        return view('dashboard', compact('experts_count', 'symptoms_count', 'diseases_count'));
     })->name('dashboard');
 
     // about

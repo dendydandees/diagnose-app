@@ -102,7 +102,7 @@ class SymptomSeeder extends Seeder
             ],
         ];
 
-        foreach ($items as $item) {
+        foreach ($items as $key => $item) {
             Symptom::updateOrCreate(['id' => $item['id']], $item);
         }
     }
