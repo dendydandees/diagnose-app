@@ -17,7 +17,7 @@
             <a href="{{ route('diseases.index') }}" class="{{ Route::is('diseases.index') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
                 {{ __('Disease Data') }}
             </a>
-            <a href="#" class="{{ Route::is('welcome') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
+            <a href="{{ route('rules.index') }}" class="{{ Route::is('rules.index') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
                 {{ __('Rule Data') }}
             </a>
             @role('admin')

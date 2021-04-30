@@ -130,7 +130,7 @@
                         {{ __('Excessive anxiety, difficult to control, and interfering with daily activities are Anxiety Disorders. With Diagnose, you can make early detection of the anxiety you experience.') }}
                     </p>
                 </div>
-                <a href="#" class="mt-6 btn-primary">
+                <a href="{{ route('consult') }}" class="mt-6 btn-primary">
                     {{ __('Anxiety Consultation') }}
                 </a>
             </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\ExpertController;
+use App\Http\Controllers\RuleController;
 use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Expert;
@@ -35,6 +36,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard', compact('experts_count', 'symptoms_count', 'diseases_count'));
     })->name('dashboard');
 
+    Route::get('/consult', function() {
+        return view('consult/index');
+    })->name('consult');
+
     // about
     Route::get('/about', function () {
         return view('about');
@@ -59,6 +64,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         // manage diseases
         Route::resource('diseases', DiseaseController::class)->except('show');
+
+        // manage rule
+        Route::resource('rules', RuleController::class);
     });
 
     // admin only middleware

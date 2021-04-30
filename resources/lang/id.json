@@ -183,5 +183,7 @@
     "Description" : "Deskripsi",
     "Edit Disease" : "Edit Gangguan",
     "Articles are being prepared by Diagnose, please come back later!" : "Artikel sedang disiapkan oleh Diagnose, kembali lagi nanti ya !",
-    "Disease" : "Gangguan"
+    "Disease" : "Gangguan",
+    "No" : "Tidak",
+    "Yes" : "Ya"
 }
