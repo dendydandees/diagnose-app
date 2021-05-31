@@ -211,7 +211,7 @@
         </x-slot>
 
         <x-slot name="footer">
-            <button class="btn-secondary inline-block" wire:click="$toggle('modalSymptomData')" wire:loading.attr="disabled">
+            <button class="btn-secondary inline-block" wire:click="$toggle('modalDiseaseData')" wire:loading.attr="disabled">
                 {{ __('Close') }}
             </button>
         </x-slot>
