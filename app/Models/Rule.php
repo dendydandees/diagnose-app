@@ -9,6 +9,8 @@ class Rule extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id_disease', 'id_symptom', 'description','value'];
+
     /**
      * Get the symptom that owns the rule.
      */

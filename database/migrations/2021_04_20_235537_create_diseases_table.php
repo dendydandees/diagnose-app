@@ -18,6 +18,7 @@ class CreateDiseasesTable extends Migration
             $table->string('code');
             $table->string('name');
             $table->text('description');
+            $table->string('type');
             $table->timestamps();
         });
     }

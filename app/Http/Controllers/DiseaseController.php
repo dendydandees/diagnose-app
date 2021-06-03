@@ -47,12 +47,14 @@ class DiseaseController extends Controller
         Validator::make($request->all(),[
             'code' => 'required|unique:diseases',
             'name' => 'required',
+            'type' => 'required',
             'description' => 'required',
         ],$this->messages)->validate();
 
         Disease::create([
             'code' => $request->code,
             'name' => $request->name,
+            'type' => $request->type,
             'description' => $request->description,
         ]);
 
@@ -84,6 +86,7 @@ class DiseaseController extends Controller
         Validator::make($request->all(),[
             'code' => 'required',
             'name' => 'required',
+            'type' => 'required',
             'description' => 'required',
         ],$this->messages)->validate();
 
@@ -104,6 +107,7 @@ class DiseaseController extends Controller
         $disease->update([
             'name' => $request->name,
             'description' => $request->description,
+            'type' => $request->type,
         ]);
 
         return redirect('/diseases')->with('message', 'Gangguan berhasil diperbarui!');

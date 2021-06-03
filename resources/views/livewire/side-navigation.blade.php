@@ -4,7 +4,7 @@
             {{ __('Dashboard') }}
         </a>
         @role('user')
-            <a href="#" class="{{ Route::is('welcome') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
+            <a href="{{ route('consult_history') }}" class="{{ Route::is('consult_history') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
                 {{ __('Consultation History') }}
             </a>
             <a href="{{ route('articles.list') }}" class="{{ Route::is('articles.list') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
@@ -25,7 +25,7 @@
                     {{ __('Expert List') }}
                 </a>
             @endrole
-            <a href="{{ route('userConsultationHistory') }}" class="{{ Route::is('userConsultationHistory') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
+            <a href="{{ route('consult_history') }}" class="{{ Route::is('consult_history') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">
                 {{ __('User Consultation History') }}
             </a>
             <a href="{{ route('articles.index') }}" class="{{ Route::is('articles.index') ? 'side-nav-link-active' : 'side-nav-link' }} min-w-full line-clamp-1 leading-loose">

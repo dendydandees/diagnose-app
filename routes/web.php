@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\SymptomController;
+use App\Models\ConsultationHistory;
 use Illuminate\Support\Facades\Route;
 use App\Models\Expert;
 use App\Models\Disease;
@@ -29,16 +31,18 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     // dashboard
     Route::get('/dashboard', function () {
+        $consult_count = ConsultationHistory::count();
         $experts_count = Expert::count();
         $symptoms_count = Symptom::count();
         $diseases_count = Disease::count();
 
-        return view('dashboard', compact('experts_count', 'symptoms_count', 'diseases_count'));
+        return view('dashboard', compact('consult_count', 'experts_count', 'symptoms_count', 'diseases_count'));
     })->name('dashboard');
 
-    Route::get('/consult', function() {
-        return view('consult/index');
-    })->name('consult');
+    Route::get('/consult_history', [ConsultationController::class, 'history'])->name('consult_history');
+    Route::get('/consult', [ConsultationController::class, 'index'])->name('consult');
+    Route::get('/consult_proses', [ConsultationController::class, 'store'])->name('consult_proses');
+    Route::get('/consult_summary/{id}', [ConsultationController::class, 'summary'])->name('consult_summary');
 
     // about
     Route::get('/about', function () {

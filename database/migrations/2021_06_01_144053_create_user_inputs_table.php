@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRulesTable extends Migration
+class CreateUserInputsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateRulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('rules', function (Blueprint $table) {
+        Schema::create('user_inputs', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_disease');
-            $table->integer('id_symptom');
-            $table->string('description')->nullable();
-            $table->integer('value')->nullable();
+            $table->integer('user');
+            $table->string('symptom');
+            $table->integer('value');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateRulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rules');
+        Schema::dropIfExists('user_inputs');
     }
 }

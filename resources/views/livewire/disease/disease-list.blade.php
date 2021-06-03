@@ -28,6 +28,9 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Name') }}
                                 </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Type') }}
+                                </th>
                                 <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Actions</span>
                                 </th>
@@ -51,6 +54,11 @@
                                     <td class="px-6 py-4">
                                         <span class="text-sm text-gray-900">
                                             {{ $disease->name }}
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-sm text-gray-900">
+                                            {{ $disease->type }}
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right font-medium space-x-2">
@@ -114,6 +122,10 @@
                 <div class="space-y-2">
                     <p class="font-bold">{{ __('Name') }}</p>
                     <p class="normal-case">{{ ucfirst($name) }}</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="font-bold">{{ __('Type') }}</p>
+                    <p class="normal-case">{{ ucfirst($type) }}</p>
                 </div>
                 <div class="space-y-2">
                     <p class="font-bold">{{ __('Description') }}</p>

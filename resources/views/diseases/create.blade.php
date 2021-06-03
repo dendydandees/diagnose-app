@@ -44,6 +44,24 @@
         </div>
 
         <div class="block">
+            <label for="type" class="font-medium text-gray-700 text-sm block">
+                {{ __('Type') }}
+            </label>
+            @php
+                $type_option = ['Jenis Gangguan Panik', 'Jenis Gangguan Kecemasan'];
+            @endphp
+            <select id="type" name="type" autocomplete="type" class="form-select mt-2 block w-6/12 rounded-md  border-gray-400 @error('type') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75 capitalize" required>
+              <option value="" selected disabled>Pilih Jenis Gangguan</option>
+              @foreach ($type_option as $item)
+                <option value="{{ $item }}">{{ $item }}</option>
+              @endforeach
+            </select>
+            @error('type')
+                <x-jet-input-error for="type" class="mt-2" />
+            @enderror
+        </div>
+
+        <div class="block">
           <label for="description" class="font-medium text-gray-700 text-sm block mb-2">
               {{ __('Description') }}
           </label>

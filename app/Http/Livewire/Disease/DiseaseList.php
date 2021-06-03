@@ -14,7 +14,7 @@ class DiseaseList extends Component
     protected $paginationTheme = 'tailwind';
 
     public $modalDelete, $modalDetail = false;
-    public $show, $count, $disease_id, $name, $code, $description;
+    public $show, $count, $disease_id, $name, $type, $code, $description;
 
     public function mount()
     {
@@ -44,6 +44,7 @@ class DiseaseList extends Component
 
         $this->disease_id = $id;
         $this->name = $disease->name;
+        $this->type = $disease->type;
         $this->code = $disease->code;
         $this->description = $disease->description;
 

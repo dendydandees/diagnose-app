@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRulesTable extends Migration
+class CreateConsultationHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateRulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('rules', function (Blueprint $table) {
+        Schema::create('consultation_histories', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_disease');
-            $table->integer('id_symptom');
-            $table->string('description')->nullable();
-            $table->integer('value')->nullable();
+            $table->json('answer')->nullable();
+            $table->integer('result')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateRulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rules');
+        Schema::dropIfExists('consultation_histories');
     }
 }

@@ -1,3 +1,94 @@
+<?php
+use Illuminate\Support\Facades\DB;
+
+use App\Gejala;
+use App\Penyakit;
+session_start();
+?>
+
+<?php
+
+if(isset($_GET['gejala'])){
+// if($request->route('gejala') != ""){
+    $gejala = $_GET['gejala'];
+    // echo $gejala;
+}else{
+    $gejala = "S001";
+
+    $rule = array();
+    $rulex = array();
+    foreach($penyakit as $ker){
+
+        $a=$ker->id;
+        $j=$ker->type;
+
+
+
+
+
+
+        $rule2 = array();
+        $or = DB::select("select * from rules,symptoms where symptoms.id=rules.id_symptom and rules.description='or' and rules.id_disease='$a'");
+
+        $jumlah_or = count($or);
+        foreach($or as $o){
+            array_push($rule2, $o->code);
+        }
+
+        $rulex['or'] = $rule2;
+
+        $rule3 = array();
+
+        $or = DB::select("select * from rules,symptoms where symptoms.id=rules.id_symptom and rules.description='and' and rules.id_disease='$a'");
+
+        $jumlah_or = count($or);
+        foreach($or as $o){
+            array_push($rule3, $o->code);
+        }
+
+        $rulex['and'] = $rule3;
+        $rulex['jenis'] = $j;
+
+        $rulex['alternatif'] = $a;
+        array_push($rule, $rulex);
+    }
+
+
+    $_SESSION['rule'] = $rule;
+}
+
+
+$pp = App\Models\Symptom::where('code',$gejala)->first();
+
+
+// $id_user = $request->route('id');
+
+
+if(isset($_GET['urutan'])){
+    $urutan = $_GET['urutan'];
+}else{
+    $urutan = 0;
+}
+
+if(isset($_GET['jenis'])){
+    $jenis = $_GET['jenis'];
+}else{
+    $jenis = "panik_or";
+}
+
+if(isset($_GET['ya_panik'])){
+    $ya_panik = $_GET['ya_panik'];
+}else{
+    $ya_panik = 0;
+}
+
+if(isset($_GET['ya_cemas'])){
+    $ya_cemas = $_GET['ya_cemas'];
+}else{
+    $ya_cemas = 0;
+}
+?>
+
 <x-without-sidenav>
   <x-slot name="header">
     <h2 class="font-bold text-2xl text-white leading-tight tracking-wider">
@@ -15,43 +106,46 @@
         </span>
     </a>
 
-    <div class="bg-white shadow-md rounded-lg px-4 py-10">
-      <div class="lg:w-8/12 text-center mx-auto space-y-12">
-        <div class="space-y-8">
-          <p class="md:w-3/4 mx-auto">
-            Pikirkanlah selama 2 minggu terakhir, seberapa sering permasalahan berikut menggangu Anda ?
-          </p>
-
-          <div class="space-y-6">
-            <p class="text-xl font-bold">
-              Apakah Anda sering mengalami berkeringat dingin atau berkeringat yang berlebihan ?
+    <form action="{{ route('consult_proses') }}" method="get">
+      <div class="bg-white shadow-md rounded-lg px-4 py-10">
+        <div class="lg:w-8/12 text-center mx-auto space-y-12">
+          <div class="space-y-8">
+            <p class="md:w-3/4 mx-auto">
+              Pikirkanlah selama 2 minggu terakhir, seberapa sering permasalahan berikut menggangu Anda ?
             </p>
-            <div class="space-x-4">
-              <div class="inline-flex items-center">
-                <input id="no" name="symptom" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-700">
-                <label for="no" class="ml-2 block text-sm font-medium text-gray-700">
-                  {{ __('No') }}
-                </label>
-              </div>
-              <div class="inline-flex items-center">
-                <input id="push_email" name="symptom" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-700">
-                <label for="push_email" class="ml-2 block text-sm font-medium text-gray-700">
-                  {{ __('Yes') }}
-                </label>
+
+            <input type="hidden" name="inisial" value="<?php echo $gejala ?>">
+            <input type="hidden" name="urutan" value="<?php echo $urutan ?>">
+            <input type="hidden" name="jenis" value="<?php echo $jenis ?>">
+            <input type="hidden" name="ya_panik" value="<?php echo $ya_panik ?>">
+            <input type="hidden" name="ya_cemas" value="<?php echo $ya_cemas ?>">
+
+            <div class="space-y-6">
+              <p class="text-xl font-bold">
+                {{ $pp->name }}
+              </p>
+              <div class="space-x-4">
+                <div class="inline-flex items-center">
+                  <input id="no" name="jawaban" type="radio" value="0" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-700" required>
+                  <label for="no" class="ml-2 block text-sm font-medium text-gray-700">
+                    {{ __('No') }}
+                  </label>
+                </div>
+                <div class="inline-flex items-center">
+                  <input id="yes" name="jawaban" type="radio" value="1" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-700" required>
+                  <label for="yes" class="ml-2 block text-sm font-medium text-gray-700">
+                    {{ __('Yes') }}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="flex flex-row justify-center items-center">
-          <button class="btn-secondary mx-4">
-            Kembali
-          </button>
-          <button class="btn-primary mx-4">
-            Selanjutnya
-          </button>
+          <div class="flex flex-row justify-center items-center">
+            <input type="submit" class="btn-primary" value="{{ __('Next') }}">
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   </section>
 </x-without-sidenav>

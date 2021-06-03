@@ -17,6 +17,8 @@ mysql -u <username> -p
 ## before run server do migrating and seeding
 php artisan migrate
 php artisan db:seed
+php artisan db:seed --class=SymptomSeeder
+php artisan db:seed --class=DiseaseSeeder
 
 ## development start
 php artisan serve

@@ -2,10 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Rule;
 use Illuminate\Database\Seeder;
 
 class RuleSeeder extends Seeder
 {
+    private $disease = 0;
+    private $symptoms = array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17');
     /**
      * Run the database seeds.
      *
@@ -13,115 +16,133 @@ class RuleSeeder extends Seeder
      */
     public function run()
     {
-        /* $items = [
-            [
-                'id' => 1,
-                'symptom_id' => 1,
-                'question' => 'Apakah Anda sering mengalami berkeringat dingin atau berkeringat yang berlebihan ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S002',
-                'no_answer' => 'S002',
-            ],
-            [
-                'id' => 2,
-                'symptom_id' => 2,
-                'question' => 'Apakah Anda sering mengalami tangan atau anggota tubuh bergetar ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S003',
-                'no_answer' => 'S003',
-            ],
-            [
-                'id' => 3,
-                'symptom_id' => 3,
-                'question' => 'Apakah Anda sering mengalami pusing, sakit di bagian kepala hingga terasa ingin pingsan ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S004',
-                'no_answer' => 'S004',
-            ],
-            [
-                'id' => 4,
-                'symptom_id' => 4,
-                'question' => 'Apakah Anda sering mengalami sesak nafas atau terasa nyeri di bagian dada ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S012',
-                'no_answer' => 'S005',
-            ],
-            [
-                'id' => 5,
-                'symptom_id' => 5,
-                'question' => 'Apakah Anda sering mengalami jantung berdetak kencang dan cepat ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S012',
-                'no_answer' => 'S006',
-            ],
-            [
-                'id' => 6,
-                'symptom_id' => 6,
-                'question' => 'Apakah Anda sering merasa mual atau nyeri dibagian perut ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S012',
-                'no_answer' => 'S007',
-            ],
-            [
-                'id' => 7,
-                'symptom_id' => 7,
-                'question' => 'Apakah Anda sering merasa gugup, cemas, dan gelisah ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S008',
-                'no_answer' => 'S008',
-            ],
-            [
-                'id' => 8,
-                'symptom_id' => 8,
-                'question' => 'Apakah Anda sering merasa lemas dan mudah lelah ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S009',
-                'no_answer' => 'S009',
-            ],
-            [
-                'id' => 9,
-                'symptom_id' => 9,
-                'question' => 'Apakah Anda sering mengalami otot tegang atau berasa nyeri ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S013',
-                'no_answer' => 'S010',
-            ],
-            [
-                'id' => 10,
-                'symptom_id' => 10,
-                'question' => 'Apakah Anda sering merasa sulit berkonsentrasi atau fokus ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S013',
-                'no_answer' => 'S011',
-            ],
-            [
-                'id' => 11,
-                'symptom_id' => 11,
-                'question' => 'Apakah Anda sering mengalami gangguan tidur ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S013',
-                'no_answer' => 'D001',
-            ],
-            [
-                'id' => 12,
-                'symptom_id' => 12,
-                'question' => 'Apakah gejala tersebut terjadi berulang-ulang selama kurang lebih dalam 1 bulan ?',
-                'yes_answer_text' => 'ya',
-                'no_answer_text' => 'tidak',
-                'yes_answer' => 'S013',
-                'no_answer' => 'S013',
-            ],
-        ]; */
+        $this->rule1();
+        $this->rule2();
+        $this->rule3();
+        $this->rule4();
+        $this->rule5();
+        $this->rule6();
+        $this->rule7();
+        $this->rule8();
+    }
+
+    public function rule1() {
+        $this->disease += 1;
+        $keterangan = array('or', 'or', 'or', 'or', 'or', 'or', null, null, null, null, null, null, null, null, null, null, null);
+        $nilai = array('1', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule2() {
+        $this->disease += 1;
+        $keterangan = array('or', 'or', 'or', 'or', 'or', 'or', null, null, null, null, null, 'and', null, null, null, null, null);
+        $nilai = array('1', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule3() {
+        $this->disease += 1;
+        $keterangan = array('or', 'or', 'or', 'or', 'or', 'or', null, null, null, null, null, 'and', 'and', 'and', null, null, null);
+        $nilai = array('1', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule4() {
+        $this->disease += 1;
+        $keterangan = array('or', 'or', 'or', 'or', 'or', 'or', null, null, null, null, null, null, 'and', 'and', null, null, null);
+        $nilai = array('1', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule5() {
+        $this->disease += 1;
+        $keterangan = array(null, null, null, null, null, null, 'or', 'or', 'or', 'or', 'or', null, null, null, null, null, null);
+        $nilai = array('0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule6() {
+        $this->disease += 1;
+        $keterangan = array(null, null, null, null, null, null, 'or', 'or', 'or', 'or', 'or', null, 'and', null, 'and', null, null);
+        $nilai = array('0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '0', '1', '0', '1', '0', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule7() {
+        $this->disease += 1;
+        $keterangan = array(null, null, null, null, null, null, 'or', 'or', 'or', 'or', 'or', null, null, null, null, 'and', null);
+        $nilai = array('0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '0', '0', '0', '0', '1', '0');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
+    }
+
+    public function rule8() {
+        $this->disease += 1;
+        $keterangan = array(null, null, null, null, null, null, 'or', 'or', 'or', 'or', 'or', null, null, null, null, null, 'and');
+        $nilai = array('0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1');
+
+        for ($a = 0; $a < count($this->symptoms); $a++) {
+            Rule::Create([
+                'id_disease' => $this->disease,
+                'id_symptom' => $this->symptoms[$a],
+                'description' => $keterangan[$a],
+                'value' => $nilai[$a]
+            ]);
+        }
     }
 }

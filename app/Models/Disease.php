@@ -9,7 +9,7 @@ class Disease extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'code', 'description'];
+    protected $fillable = ['name', 'code', 'description', 'type'];
 
     public function getNameAttribute($value)
     {

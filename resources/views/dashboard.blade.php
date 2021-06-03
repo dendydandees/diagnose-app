@@ -16,7 +16,9 @@
                             <h4 class="text-lg font-semibold tracking-wider">
                                 {{ __('Number of Consultations') }}
                             </h4>
-                            <span class="text-2xl font-semibold mt-6">24</span>
+                            <span class="text-2xl font-semibold mt-6">
+                                {{ $consult_count }}
+                            </span>
                         {{-- show on admin --}}
                         @else
                             <h4 class="text-lg font-semibold tracking-wider">
@@ -64,7 +66,7 @@
                         </a>
                     </div>
 
-                    <x-user-consultation-history-table :history="$history ?? ''"/>
+                    @livewire('consult.history-list-expert-admin')
                 </div>
             {{-- show on admin --}}
             @else
@@ -133,6 +135,19 @@
                 <a href="{{ route('consult') }}" class="mt-6 btn-primary">
                     {{ __('Anxiety Consultation') }}
                 </a>
+            </div>
+
+            <div>
+                <div class="flex flex-row justify-between items-center mb-6">
+                    <h3 class="font-bold text-xl leading-tight tracking-wider">
+                        {{ __('Consultation History') }}
+                    </h3>
+                    <a href="{{ route('consult_history') }}" class="link">
+                        {{ __('View more') }}
+                    </a>
+                </div>
+
+                @livewire('consult.history-list')
             </div>
         @endhasanyrole
     </section>

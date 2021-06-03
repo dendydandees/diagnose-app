@@ -43,9 +43,27 @@
             <label for="name" class="font-medium text-gray-700 text-sm block">
                 {{ __('Name') }}
             </label>
-            <textarea id="name" name="name" class="form-textarea mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75" rows="3">{{ $disease->name }}</textarea>
+            <input id="name" name="name" type="text" value="{{ $disease->name }}" class="form-input mt-2 block w-full rounded-md border-gray-400 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75">
             @error('name')
                 <x-jet-input-error for="name" class="mt-2" />
+            @enderror
+        </div>
+
+        <div class="block">
+            <label for="type" class="font-medium text-gray-700 text-sm block">
+                {{ __('Type') }}
+            </label>
+            @php
+                $type_option = ['Jenis Gangguan Panik', 'Jenis Gangguan Kecemasan'];
+            @endphp
+            <select id="type" name="type" autocomplete="type" class="form-select mt-2 block w-6/12 rounded-md  border-gray-400 @error('type') border-red-400 @enderror shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-75 capitalize" required>
+              <option value="" selected disabled>Pilih Jenis Gangguan</option>
+              @foreach ($type_option as $item)
+                <option value="{{ $item }}" {{ $disease->type == $item ? 'selected' : '' }}>{{ $item }}</option>
+              @endforeach
+            </select>
+            @error('type')
+                <x-jet-input-error for="type" class="mt-2" />
             @enderror
         </div>
 
