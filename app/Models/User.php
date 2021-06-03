@@ -10,8 +10,9 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -19,6 +20,7 @@ class User extends Authenticatable
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'email_verified_at', 'profile_photo_path'
     ];
 
     /**
@@ -58,4 +60,33 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Get the user profile associated with the user.
+     */
+    public function userProfile()
+    {
+        return $this->hasOne(UserProfile::class);
+    }
+
+    /**
+     * Get the expert associated with the user.
+     */
+    public function expert()
+    {
+        return $this->hasOne(Expert::class);
+    }
+
+    /**
+     * Get the admin associated with the user.
+     */
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function history()
+    {
+        return $this->hasMany(ConsultationHistory::class);
+    }
 }

@@ -1,60 +1,76 @@
 <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
+    <div class="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white md:border md:rounded-lg md:p-6 md:shadow-lg">
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <div class="flex justify-center align-center">
+                    <a href="{{ route('welcome') }}" class="inline-block">
+                        <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" alt="Diagnose Logo">
+                    </a>
+                </div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 px-3">
+                    {{ __("Register to Diagnose")}}
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    {{ __("Already have an account ?") }}
+                    <a href="{{ route('login') }}" class="font-bold text-purple-600 hover:text-purple-500">
+                    {{ __('Sign In') }}
+                    </a>
+                </p>
             </div>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+            <x-jet-validation-errors class="my-4" />
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
+            @if (session('status'))
+                <div class="my-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
                 </div>
             @endif
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+            <form class="mt-8 space-y-6" method="POST" action="{{ route('register') }}">
+                @csrf
+                <input type="hidden" name="remember" value="true">
 
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <!-- name field -->
+                    <label for="name" class="sr-only">{{ __('Fullname') }}</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Full Name') }}" value="{{old('name')}}" autofocus>
+
+                    <!-- email field -->
+                    <label for="email-address" class="sr-only">{{ __('Email address') }}</label>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required
+                    class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Email address') }}" value="{{old('email')}}">
+
+                    <!-- gender field -->
+                    <label for="gender" class="sr-only">{{ __('Gender') }}</label>
+                    @php
+                        $gender = collect(['male', 'female']);
+                    @endphp
+                    <select name="gender" id="gender" class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" required>
+                        @foreach ($gender as $item)
+                            <option value="{{ $item }}" {{ old('gender') == $item ? 'selected' : '' }}>
+                                {{ $item === 'male' ? 'Laki-Laki' : 'Perempuan' }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    <!-- age field -->
+                    <label for="age" class="sr-only">{{ __('Age') }}</label>
+                    <input id="age" name="age" type="number" autocomplete="age" min="17" max="70" required
+                    class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Age') }}" value="{{old('age')}}">
+
+                    <!-- password field -->
+                    <label for="password" class="sr-only">{{ __('Password') }}</label>
+                    <input id="password" name="password" type="password" autocomplete="new-password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Password') }}">
+
+                    <!-- password confirmation field -->
+                    <label for="password_confirmation" class="sr-only">{{ __('Confirm Password') }}</label>
+                    <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm" placeholder="{{ __('Password Confirmation') }}">
+                </div>
+
+                <button type="submit" class="group relative w-full flex justify-center py-2 px-4 mb-3 border border-transparent text-sm font-bold rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                    {{ __('Sign Up') }}
+                </button>
+            </form>
+        </div>
+    </div>
 </x-guest-layout>

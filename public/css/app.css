@@ -748,6 +748,471 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+.transition-base {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn-primary {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  --tw-bg-opacity: 1;
+  background-color: rgba(124, 58, 237, var(--tw-bg-opacity));
+}
+
+.btn-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
+}
+
+.btn-primary {
+  border-color: transparent;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-primary:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn-primary:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(167, 139, 250, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.btn-primary {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn-secondary {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.btn-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
+}
+
+.btn-secondary {
+  --tw-border-opacity: 1;
+  border-color: rgba(139, 92, 246, var(--tw-border-opacity));
+  border-radius: 0.375rem;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-secondary:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn-secondary:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(167, 139, 250, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.btn-secondary {
+  --tw-text-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-text-opacity));
+}
+
+.btn-secondary:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.btn-secondary {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn-blue {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  --tw-bg-opacity: 1;
+  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+}
+
+.btn-blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+}
+
+.btn-blue {
+  border-color: transparent;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-blue:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-blue {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn-blue:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(96, 165, 250, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.btn-blue {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn-green {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  --tw-bg-opacity: 1;
+  background-color: rgba(5, 150, 105, var(--tw-bg-opacity));
+}
+
+.btn-green:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+}
+
+.btn-green {
+  border-color: transparent;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-green:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-green {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn-green:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(52, 211, 153, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.btn-green {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn-danger {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  --tw-bg-opacity: 1;
+  background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+}
+
+.btn-danger:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
+}
+
+.btn-danger {
+  border-color: transparent;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-danger:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-danger {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn-danger:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(248, 113, 113, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.btn-danger {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.link {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.link:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.link {
+  --tw-text-opacity: 1;
+  color: rgba(139, 92, 246, var(--tw-text-opacity));
+}
+
+.link:hover {
+  --tw-text-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-text-opacity));
+}
+
+.link:focus {
+  --tw-text-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-text-opacity));
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  text-decoration: underline;
+}
+
+.side-nav-link {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.side-nav-link:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+}
+
+.side-nav-link {
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.side-nav-link:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.side-nav-link {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.side-nav-link:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(167, 139, 250, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.side-nav-link:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.side-nav-link {
+  width: 100%;
+}
+
+.side-nav-link-active {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  --tw-bg-opacity: 1;
+  background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
+}
+
+.side-nav-link-active:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+}
+
+.side-nav-link-active {
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.side-nav-link-active:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.side-nav-link-active {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.side-nav-link-active:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(167, 139, 250, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.side-nav-link-active {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.side-nav-link-active:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.side-nav-link-active {
+  width: 100%;
+}
+
 .container {
   width: 100%;
 }
@@ -15378,6 +15843,10 @@ select {
 
 .max-w-0 {
   max-width: 0rem;
+}
+
+.max-w-1 {
+  max-width: 10rem;
 }
 
 .max-w-none {
@@ -32717,6 +33186,77 @@ select {
           animation: bounce 1s infinite;
 }
 
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.line-clamp-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.line-clamp-6 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+.line-clamp-none {
+  -webkit-line-clamp: unset;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7C3AED;
+  height: 60px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -47348,6 +47888,10 @@ select {
 
   .sm\:max-w-0 {
     max-width: 0rem;
+  }
+
+  .sm\:max-w-1 {
+    max-width: 10rem;
   }
 
   .sm\:max-w-none {
@@ -64607,6 +65151,52 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .sm\:line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .sm\:line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .sm\:line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .sm\:line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .sm\:line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .sm\:line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+
+  .sm\:line-clamp-none {
+    -webkit-line-clamp: unset;
+  }
 }
 
 @media (min-width: 768px) {
@@ -79240,6 +79830,10 @@ select {
 
   .md\:max-w-0 {
     max-width: 0rem;
+  }
+
+  .md\:max-w-1 {
+    max-width: 10rem;
   }
 
   .md\:max-w-none {
@@ -96499,6 +97093,52 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .md\:line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .md\:line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .md\:line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .md\:line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .md\:line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .md\:line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+
+  .md\:line-clamp-none {
+    -webkit-line-clamp: unset;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -111132,6 +111772,10 @@ select {
 
   .lg\:max-w-0 {
     max-width: 0rem;
+  }
+
+  .lg\:max-w-1 {
+    max-width: 10rem;
   }
 
   .lg\:max-w-none {
@@ -128391,6 +129035,52 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .lg\:line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .lg\:line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .lg\:line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .lg\:line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .lg\:line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .lg\:line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+
+  .lg\:line-clamp-none {
+    -webkit-line-clamp: unset;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -143024,6 +143714,10 @@ select {
 
   .xl\:max-w-0 {
     max-width: 0rem;
+  }
+
+  .xl\:max-w-1 {
+    max-width: 10rem;
   }
 
   .xl\:max-w-none {
@@ -160283,6 +160977,52 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .xl\:line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .xl\:line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .xl\:line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .xl\:line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .xl\:line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .xl\:line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+
+  .xl\:line-clamp-none {
+    -webkit-line-clamp: unset;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -174916,6 +175656,10 @@ select {
 
   .\32xl\:max-w-0 {
     max-width: 0rem;
+  }
+
+  .\32xl\:max-w-1 {
+    max-width: 10rem;
   }
 
   .\32xl\:max-w-none {
@@ -192174,6 +192918,52 @@ select {
   .\32xl\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .\32xl\:line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .\32xl\:line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .\32xl\:line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .\32xl\:line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .\32xl\:line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .\32xl\:line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+
+  .\32xl\:line-clamp-none {
+    -webkit-line-clamp: unset;
   }
 }
 

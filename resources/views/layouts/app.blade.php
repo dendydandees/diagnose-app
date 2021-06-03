@@ -4,8 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="title" content="{{ config('app.name', 'Laravel') }}">
+        <meta name="author" content="Dendy Dharmawan">
+        <meta name="description" content="Diagnose merupakan sistem pakar untuk melakukan diagnosa dini mengenai gangguan kecemasan.">
+        <meta name="keywords" content="{{ config('app.name', 'Laravel') }}, sistem pakar, gangguan kecemasan" />
+        <link rel="shortcut icon" href="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" type="image/x-icon">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Laravel') }} - {{ __('Expert System for Diagnosis of Anxiety Disorders') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -15,32 +20,42 @@
 
         @livewireStyles
 
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased text-gray-900">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <section class="min-h-screen bg-gray-100">
+            <!-- Navigation Bar -->
             @livewire('navigation-menu')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+            <div class="grid grid-cols-12 min-h-screen">
+                <!-- Side Bar -->
+                @livewire('side-navigation')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+                <div class="col-span-9">
+                    <!-- Page Heading -->
+                    @if (isset($header))
+                        <header class="bg-purple-500 shadow">
+                            <div class="py-6 px-3 lg:px-6">
+                                {{ $header }}
+                            </div>
+                        </header>
+                    @endif
+
+                    <!-- Page Content -->
+                    <main>
+                        {{ $slot }}
+                    </main>
+                </div>
+            </div>
+        </section>
 
         @stack('modals')
 
         @livewireScripts
+
+        <!-- Main JS -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        @yield('script')
     </body>
 </html>

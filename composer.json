@@ -12,13 +12,16 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "laravel-lang/lang": "~8.0",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.2",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.0"
+        "livewire/livewire": "^2.0",
+        "spatie/laravel-permission": "^4.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\RolesAndPermissionsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        if (app()->environment() == 'production') {
+            $this->call([
+                RolesAndPermissionsSeeder::class,
+                UserSeeder::class,
+                SymptomSeeder::class,
+                DiseaseSeeder::class,
+                ArticleSeeder::class,
+                RuleSeeder::class,
+            ]);
+        } else {
+            $this->call([
+                RolesAndPermissionsSeeder::class,
+                UserSeeder::class,
+                SymptomSeeder::class,
+                DiseaseSeeder::class,
+                ArticleSeeder::class,
+                RuleSeeder::class,
+            ]);
+        }
     }
 }
