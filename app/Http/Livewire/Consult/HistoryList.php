@@ -35,7 +35,7 @@ class HistoryList extends Component
         $user_id = Auth::user()->id;
 
         return view('livewire.consult.history-list', [
-            'history' => ConsultationHistory::where("user_id", $user_id)->paginate($this->count),
+            'history' => ConsultationHistory::where("user_id", $user_id)->orderBy('created_at', 'desc')->paginate($this->count),
         ]);
     }
 

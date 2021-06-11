@@ -5,6 +5,9 @@
 ```
 ## instalation on local
 composer install
+! -- generate the key
+php artisan key:generate
+
 
 ## start mysql server
 sudo service mysql start
