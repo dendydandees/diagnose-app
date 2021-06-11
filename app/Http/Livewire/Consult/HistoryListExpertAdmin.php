@@ -24,7 +24,7 @@ class HistoryListExpertAdmin extends Component
     public function render()
     {
         return view('livewire.consult.history-list-expert-admin', [
-            'history' => ConsultationHistory::paginate($this->count),
+            'history' => ConsultationHistory::orderBy('created_at', 'desc')->paginate($this->count),
         ]);
     }
 }
