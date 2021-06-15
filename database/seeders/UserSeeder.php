@@ -37,6 +37,9 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10)
         ]);
         $admin->assignRole('admin');
+        $admin->admin()->create([
+            'user_id' => $admin->id
+        ]);
 
         // create expert
         // User::factory(1)
@@ -59,6 +62,11 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10)
         ]);
         $expert->assignRole('expert');
+        $expert->expert()->create([
+            'position' => 'Psikolog',
+            'company' => 'Personal Growth',
+            'user_id' => $expert->id
+        ]);
 
         // create user
         // User::factory(1)
@@ -88,5 +96,10 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
         $user->assignRole('user');
+        $user->userProfile()->create([
+            'gender' => 'male',
+            'age' => 21,
+            'user_id' => $user->id
+        ]);
     }
 }
