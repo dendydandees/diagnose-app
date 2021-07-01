@@ -62,7 +62,7 @@
                                                 $p = App\Models\Disease::where('id',$hasil)->first();
                                                 echo "{$p->name}";
                                             } else {
-                                                echo "Tingkat Kecemasan Normal";
+                                                echo "Tidak mengalami gangguan kecemasan";
                                             }
                                         @endphp
                                     </span>

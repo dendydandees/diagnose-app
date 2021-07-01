@@ -48,13 +48,26 @@
               </ul>
           </div>
         @else
+        <div class="space-y-6">
           <p>
-            Kecemasan yang Anda alami adalah reaksi cemas yang masih normal sehingga tidak diperlukannya konsultasi lebih lanjut kepada psikiater atau psikolog. Jika Anda ingin mengetahui lebih lanjut seputar informasi gangguan kecemasan atau informasi kesehatan mental, Anda dapat membaca beberapa artikel <a href="{{ route('articles.list') }}" class="link font-bold">di sini</a>
+            Tidak ditemukannya indikasi mengenai gangguan kecemasan, sehingga tidak diperlukannya konsultasi lebih lanjut kepada psikiater atau psikolog. Jika Anda ingin mengetahui lebih lanjut seputar informasi gangguan kecemasan atau informasi kesehatan mental, Anda dapat membaca beberapa artikel <a href="{{ route('articles.list') }}" class="link font-bold">di sini</a>
           </p>
 
           <p>
             Untuk informasi lebih lanjut Anda dapat menghubungi <b>Direktorat Pencegahan dan Pengendalian Masalah Kesehatan Mental dan Obat</b> di <b>119</b> atau <b>Personal Growth</b> di <b>+62 821 5890 3862</b>.
           </p>
+        </div>
+
+        <div class="space-y-4">
+          <p class="font-bold">Riwayat Gejala</p>
+          <ul>
+          @foreach ($user_input as $key => $item)
+            <li class="{{ $item['value'] == '0' ? 'line-through' : 'font-bold' }}">
+              <b>{{ $loop->iteration }}.</b> {{ $item['name'] }} - {{ $item['value'] == '0' ? 'Tidak' : 'Ya' }}
+            </li>
+          @endforeach
+          </ul>
+        </div>
         @endif
       </div>
 
