@@ -41,7 +41,8 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <span class="text-sm text-gray-900">
-                                                (@php
+                                                    {{ $disease->type == 'Jenis Gangguan Panik' ? 'Jika terdapat 4 gejala dari ' : 'Jika terdapat 3 gejala dari ' }}
+                                                @php
                                                     $or = DB::table('rules')
                                                             ->join('symptoms', 'rules.id_symptom', '=', 'symptoms.id')
                                                             ->where("description","or")
@@ -52,18 +53,18 @@
                                                             $ke = 1;
                                                             $jumlah_or = count($or);
                                                             foreach($or as $o){
-                                                            echo $o->code;
+                                                                echo "<b>{$o->code}</b>";
 
                                                             if($ke != $jumlah_or){
-                                                            echo " <b>ATAU</b> ";
+                                                            echo " , ";
                                                             }
 
                                                                 $ke++;
                                                             }
-                                                @endphp)
+                                                @endphp
 
                                                 @php
-                                                    $or = DB::table('rules')
+                                                    $and = DB::table('rules')
                                                             ->join('symptoms', 'rules.id_symptom', '=', 'symptoms.id')
                                                             ->where("description","and")
                                                             ->where("id_disease",$disease_id)
@@ -73,20 +74,21 @@
 
 
                                                             $ke = 1;
-                                                            $jumlah_or = count($or);
-                                                            foreach($or as $o){
-
-                                                                echo " <b>DAN</b> ";
-
-                                                                echo $o->code;
+                                                            $jumlah_and = count($and);
+                                                            echo $jumlah_and != 0 ? 'Dan disertai gejala ' : '';
+                                                            foreach($and as $a){
+                                                                echo "<b>{$a->code}</b>";
+                                                                if($ke != $jumlah_and){
+                                                                    echo " dan ";
+                                                                }
                                                                 $ke++;
 
                                                             }
                                                 @endphp
 
                                                 @php
-                                                    echo " <b>MAKA</b> ";
-                                                    echo $disease->code;
+                                                    echo " maka ";
+                                                    echo "<b> {$disease->code} </b>";
                                                 @endphp
                                                 </span>
                                             </td>
@@ -283,6 +285,9 @@
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 {{ __('Name') }}
                                             </th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                {{ __('Type') }}
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
@@ -298,6 +303,11 @@
                                                 <td class="px-6 py-4">
                                                     <span class="text-sm text-gray-900">
                                                         {{ $disease->name }}
+                                                    </span>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <span class="text-sm text-gray-900">
+                                                        {{ $disease->type }}
                                                     </span>
                                                 </td>
                                             </tr>
