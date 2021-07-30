@@ -24,6 +24,7 @@ php artisan db:seed --class=SymptomSeeder
 php artisan db:seed --class=DiseaseSeeder
 
 ## development start
+npm run dev
 php artisan serve
 ```
 
