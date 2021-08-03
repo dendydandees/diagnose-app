@@ -1,6 +1,6 @@
 <p align="center"><a href="https://github.com/dendydandees/diagnose-app" target="_blank"><img src="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg" width="100"></a></p>
 
-## Starting
+## Starting On Development
 
 ```
 ## instalation on local
@@ -28,7 +28,7 @@ npm run dev
 php artisan serve
 ```
 
-## Starting Using Sail
+## Or Starting Using Sail on Docker
 
 ```
 ## development start
