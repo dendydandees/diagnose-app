@@ -22,6 +22,7 @@ Diagnose merupakan sebuah sistem yang dapat digunakan untuk melakukan deteksi di
 
 
 ### Catatan untuk kamu seorang pakar
+
 Untuk kamu seorang pakar (psikolog, psikiater, dsb), kamu dapat melakukan pengelolaan data seperti data gejala, data gangguan, dan data aturan mengenai diagnosa gangguan kecemasan. Dan kamu juga dapat menambahkan informasi seputar kesehatan mental.
 
 ### Diagnose Landing Page
@@ -40,31 +41,18 @@ Untuk kamu seorang pakar (psikolog, psikiater, dsb), kamu dapat melakukan pengel
 </br>
 </br>
 
-## Starting On Development
+## Development
 
-```
-## installation on local
-composer install
-
-## generate the key
-php artisan key:generate
-
-## start mysql server
-!-- use your own database account,
-!-- edit the env file if the db_username and db_pasword not the same,
-!-- and then create a database like env file
-
-sudo service mysql start
-mysql -u <username> -p
-
-## before run server, do migrate and seed
-php artisan migrate --seed
-
-## development start
-npm install
-npm run dev
-php artisan serve
-```
+1. Install dependencies using `composer install`
+2. Generate the key using `php artisan key:generate`
+3. Start your MySQL server using `sudo service mysql start` for linux, for windows you can use xampp
+    !-- use your local database account `mysql -u <username> -p`
+    !-- edit the env file if the db_username and db_password not the same
+    !-- create a database like env file
+4. Run migration and seeder using `php artisan migrate --seed`
+5. Install javascript depedencies using `npm install`
+6. Bundle javascript depedencies using `npm run dev`
+7. Start development server using `php artisan serve`
 
 </br>
 </br>
