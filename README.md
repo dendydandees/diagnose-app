@@ -45,16 +45,19 @@ Untuk kamu seorang pakar (psikolog, psikiater, dsb), kamu dapat melakukan pengel
 
 1. Install dependencies using `composer install`
 2. Generate the key using `php artisan key:generate`
-3. Start your MySQL server using `sudo service mysql start` for linux, for windows you can use xampp
-<ul>
-    <li>use your local database account, run `mysql -u <username> -p`</li>
-    <li>edit the env file if the db_username and db_password not the same</li>
-    <li>create a database like env file</li>
-</ul>
+3. Start your MySQL server using `sudo service mysql start` for linux, for windows you can use xampp *
 4. Run migration and seeder using `php artisan migrate --seed`
 5. Install javascript depedencies using `npm install`
 6. Bundle javascript depedencies using `npm run dev`
 7. Start development server using `php artisan serve`
+
+
+```
+* Catatan
+1. Use your local database account, run `mysql -u <username> -p`
+2. Edit the env file if the db_username and db_password not the same
+3. Create a database like env file
+```
 
 </br>
 </br>
