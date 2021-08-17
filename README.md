@@ -43,7 +43,7 @@ Untuk kamu seorang pakar (psikolog, psikiater, dsb), kamu dapat melakukan pengel
 ## Starting On Development
 
 ```
-## instalation on local
+## installation on local
 composer install
 
 ## generate the key
